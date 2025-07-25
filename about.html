@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Quenti Solutions</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- All content will be injected dynamically by JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+    // Inject all page elements dynamically
+    document.addEventListener('DOMContentLoaded', function() {
+      // Header
+      var headerHTML = `
+        <header>
+          <nav>
+            <div class="logo">Quenti Solutions</div>
+            <ul class="nav-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </nav>
+        </header>
+      `;
+      // Main
+      var mainHTML = `
+        <main>
+          <section class="page-header">
+            <h1>About Us</h1>
+            <p>Learn more about Quenti Solutions and our mission.</p>
+          </section>
+          <section class="about-content">
+            <h2>Who We Are</h2>
+            <p>Quenti Solutions is a leading provider of IT and ITES services, helping businesses leverage technology for growth and efficiency. Our team of experts brings years of experience in delivering innovative solutions tailored to client needs.</p>
+            <h2>Our Mission</h2>
+            <p>To empower organizations with cutting-edge technology and business process services, driving digital transformation and operational excellence.</p>
+            <h2>Why Choose Us?</h2>
+            <ul>
+              <li>Experienced professionals</li>
+              <li>Client-centric approach</li>
+              <li>Proven track record</li>
+              <li>Comprehensive service portfolio</li>
+            </ul>
+          </section>
+        </main>
+      `;
+      // Footer
+      var footerHTML = `
+        <footer>
+          <p>&copy; 2025 Quenti Solutions. All rights reserved.</p>
+        </footer>
+      `;
+      document.body.insertAdjacentHTML('afterbegin', headerHTML + mainHTML);
+      document.body.insertAdjacentHTML('beforeend', footerHTML);
+      // Cookie banner and modal (same as before)
+      var cookieBannerHTML = `
+        <div id="cookie-banner" style="position:fixed;bottom:0;left:0;width:100%;background:#222;color:#fff;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;z-index:1000;flex-wrap:wrap;gap:1rem;">
+          <span style="flex:1 1 300px;min-width:100px;font-size:small">We use cookies on our website to give you the most relevant experience by remembering your preferences and repeat visits. By clicking “Accept All”, you consent to the use of ALL the cookies. However, you may visit <b>Cookie Settings</b> to provide a controlled consent. <a href="cookie-policy.html" style="color:#ffb300;text-decoration:underline;">Cookie Policy</a></span>
+          <div style="display:flex;gap:0.5rem;align-items:center;">
+            <button id="cookie-accept" style="background:#ffb300;color:#222;border:none;padding:0.5rem 1.2rem;border-radius:3px;font-weight:bold;cursor:pointer;">Accept All</button>
+            <button id="cookie-settings" style="background:#fff;color:#222;border:none;padding:0.5rem 1.2rem;border-radius:3px;font-weight:bold;cursor:pointer;">Cookie Settings</button>
+            <button id="cookie-close" style="background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;line-height:1;">&times;</button>
+          </div>
+        </div>
+        <div id="cookie-modal" style="display:none;position:fixed;z-index:2000;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,0.4);justify-content:center;align-items:center;">
+          <div style="background:#fff;color:#222;max-width:420px;width:90vw;padding:2rem 1.5rem 1.5rem 1.5rem;border-radius:8px;box-shadow:0 4px 24px rgba(0,0,0,0.18);position:relative;">
+            <button id="cookie-modal-close" style="position:absolute;top:10px;right:14px;background:none;border:none;font-size:1.7rem;color:#222;cursor:pointer;">&times;</button>
+            <h2 style="margin-top:0;">Privacy Overview</h2>
+            <p id="cookie-modal-text" style="font-size:1rem;line-height:1.6;">
+              This website uses cookies to improve your experience while you navigate through the website. Out of these, the cookies that are categorized as necessary are stored on your browser as they are essential for the working of basic functionalities of the website. We also use third-party cookies that help us analyze and understand how you use this website. These cookies will be stored in your browser only with your consent. You also have the option to opt-out of these cookies. But opting out of some of these cookies may affect your browsing experience.
+            </p>
+            <button id="cookie-modal-showmore" style="background:#ffb300;color:#222;border:none;padding:0.4rem 1.1rem;border-radius:3px;font-weight:bold;cursor:pointer;display:inline-block;margin-top:0.5rem;">Show More</button>
+            <div style="margin-top:1.5rem;padding:1rem;background:#f5f5f5;border-radius:6px;display:flex;flex-direction:column;gap:1rem;flex-wrap:wrap;">
+              <div class="cookie-row" style="display:flex;align-items:center;gap:0.7rem;flex-wrap:wrap;">
+                <button class="cookie-expand" aria-label="Expand" style="background:none;border:none;font-size:1.2rem;cursor:pointer;line-height:1;">&#9654;</button>
+                <label style="display:flex;align-items:center;gap:0.7rem;font-weight:500;min-width:120px;margin-bottom:0;">
+                  Essential Cookies
+                  <input type="checkbox" checked disabled style="accent-color:#1a237e;width:1.3em;height:1.3em;">
+                </label>
+              </div>
+              <div class="cookie-desc" style="display:none;font-size:0.97rem;color:#444;margin-left:2.2rem;">These cookies are necessary for the website to function and cannot be switched off in our systems.</div>
+              <div class="cookie-row" style="display:flex;align-items:center;gap:0.7rem;flex-wrap:wrap;">
+                <button class="cookie-expand" aria-label="Expand" style="background:none;border:none;font-size:1.2rem;cursor:pointer;line-height:1;">&#9654;</button>
+                <label style="display:flex;align-items:center;gap:0.7rem;font-weight:500;min-width:120px;margin-bottom:0;">
+                  Functional Cookies
+                  <span class="cookie-switch" style="position:relative;display:inline-block;width:40px;height:22px;">
+                    <input type="checkbox" id="functional-toggle" style="opacity:0;width:40px;height:22px;cursor:pointer;z-index:2;position:absolute;top:0;left:0;margin:0;">
+                    <span class="cookie-bg" style="position:absolute;top:0;left:0;right:0;bottom:0;background-color:#ccc;border-radius:22px;transition:.4s;"></span>
+                    <span class="cookie-knob" style="position:absolute;left:3px;top:3px;width:16px;height:16px;background:#fff;border-radius:50%;transition:.4s;"></span>
+                  </span>
+                </label>
+              </div>
+              <div class="cookie-desc" style="display:none;font-size:0.97rem;color:#444;margin-left:2.2rem;">These cookies enable enhanced functionality and personalization, such as videos and live chats.</div>
+              <div class="cookie-row" style="display:flex;align-items:center;gap:0.7rem;flex-wrap:wrap;">
+                <button class="cookie-expand" aria-label="Expand" style="background:none;border:none;font-size:1.2rem;cursor:pointer;line-height:1;">&#9654;</button>
+                <label style="display:flex;align-items:center;gap:0.7rem;font-weight:500;min-width:120px;margin-bottom:0;">
+                  Analytics Cookies
+                  <span class="cookie-switch" style="position:relative;display:inline-block;width:40px;height:22px;">
+                    <input type="checkbox" id="analytics-toggle" style="opacity:0;width:40px;height:22px;cursor:pointer;z-index:2;position:absolute;top:0;left:0;margin:0;">
+                    <span class="cookie-bg" style="position:absolute;top:0;left:0;right:0;bottom:0;background-color:#ccc;border-radius:22px;transition:.4s;"></span>
+                    <span class="cookie-knob" style="position:absolute;left:3px;top:3px;width:16px;height:16px;background:#fff;border-radius:50%;transition:.4s;"></span>
+                  </span>
+                </label>
+              </div>
+              <div class="cookie-desc" style="display:none;font-size:0.97rem;color:#444;margin-left:2.2rem;">These cookies help us understand how visitors interact with our website, discover errors, and provide better overall analytics.</div>
+              <div class="cookie-row" style="display:flex;align-items:center;gap:0.7rem;flex-wrap:wrap;">
+                <button class="cookie-expand" aria-label="Expand" style="background:none;border:none;font-size:1.2rem;cursor:pointer;line-height:1;">&#9654;</button>
+                <label style="display:flex;align-items:center;gap:0.7rem;font-weight:500;min-width:120px;margin-bottom:0;">
+                  Performance Cookies
+                  <span class="cookie-switch" style="position:relative;display:inline-block;width:40px;height:22px;">
+                    <input type="checkbox" id="performance-toggle" style="opacity:0;width:40px;height:22px;cursor:pointer;z-index:2;position:absolute;top:0;left:0;margin:0;">
+                    <span class="cookie-bg" style="position:absolute;top:0;left:0;right:0;bottom:0;background-color:#ccc;border-radius:22px;transition:.4s;"></span>
+                    <span class="cookie-knob" style="position:absolute;left:3px;top:3px;width:16px;height:16px;background:#fff;border-radius:50%;transition:.4s;"></span>
+                  </span>
+                </label>
+              </div>
+              <div class="cookie-desc" style="display:none;font-size:0.97rem;color:#444;margin-left:2.2rem;">These cookies are used to enhance the performance and functionality of our website but are non-essential to their use.</div>
+              <div class="cookie-row" style="display:flex;align-items:center;gap:0.7rem;flex-wrap:wrap;">
+                <button class="cookie-expand" aria-label="Expand" style="background:none;border:none;font-size:1.2rem;cursor:pointer;line-height:1;">&#9654;</button>
+                <label style="display:flex;align-items:center;gap:0.7rem;font-weight:500;min-width:120px;margin-bottom:0;">
+                  Advertisement Cookies
+                  <span class="cookie-switch" style="position:relative;display:inline-block;width:40px;height:22px;">
+                    <input type="checkbox" id="advertisement-toggle" style="opacity:0;width:40px;height:22px;cursor:pointer;z-index:2;position:absolute;top:0;left:0;margin:0;">
+                    <span class="cookie-bg" style="position:absolute;top:0;left:0;right:0;bottom:0;background-color:#ccc;border-radius:22px;transition:.4s;"></span>
+                    <span class="cookie-knob" style="position:absolute;left:3px;top:3px;width:16px;height:16px;background:#fff;border-radius:50%;transition:.4s;"></span>
+                  </span>
+                </label>
+              </div>
+              <div class="cookie-desc" style="display:none;font-size:0.97rem;color:#444;margin-left:2.2rem;">These cookies are used to deliver advertisements that are relevant to you and your interests.</div>
+              <div class="cookie-row" style="display:flex;align-items:center;gap:0.7rem;flex-wrap:wrap;">
+                <button class="cookie-expand" aria-label="Expand" style="background:none;border:none;font-size:1.2rem;cursor:pointer;line-height:1;">&#9654;</button>
+                <label style="display:flex;align-items:center;gap:0.7rem;font-weight:500;min-width:120px;margin-bottom:0;">
+                  Social Networking Cookies
+                  <span class="cookie-switch" style="position:relative;display:inline-block;width:40px;height:22px;">
+                    <input type="checkbox" id="social-toggle" style="opacity:0;width:40px;height:22px;cursor:pointer;z-index:2;position:absolute;top:0;left:0;margin:0;">
+                    <span class="cookie-bg" style="position:absolute;top:0;left:0;right:0;bottom:0;background-color:#ccc;border-radius:22px;transition:.4s;"></span>
+                    <span class="cookie-knob" style="position:absolute;left:3px;top:3px;width:16px;height:16px;background:#fff;border-radius:50%;transition:.4s;"></span>
+                  </span>
+                </label>
+              </div>
+              <div class="cookie-desc" style="display:none;font-size:0.97rem;color:#444;margin-left:2.2rem;">These cookies are set by social media services to enable you to share our content with your friends and networks.</div>
+              <div class="cookie-row" style="display:flex;align-items:center;gap:0.7rem;flex-wrap:wrap;">
+                <button class="cookie-expand" aria-label="Expand" style="background:none;border:none;font-size:1.2rem;cursor:pointer;line-height:1;">&#9654;</button>
+                <label style="display:flex;align-items:center;gap:0.7rem;font-weight:500;min-width:120px;margin-bottom:0;">
+                  Unclassified Cookies
+                  <span class="cookie-switch" style="position:relative;display:inline-block;width:40px;height:22px;">
+                    <input type="checkbox" id="unclassified-toggle" style="opacity:0;width:40px;height:22px;cursor:pointer;z-index:2;position:absolute;top:0;left:0;margin:0;">
+                    <span class="cookie-bg" style="position:absolute;top:0;left:0;right:0;bottom:0;background-color:#ccc;border-radius:22px;transition:.4s;"></span>
+                    <span class="cookie-knob" style="position:absolute;left:3px;top:3px;width:16px;height:16px;background:#fff;border-radius:50%;transition:.4s;"></span>
+                  </span>
+                </label>
+              </div>
+              <div class="cookie-desc" style="display:none;font-size:0.97rem;color:#444;margin-left:2.2rem;">These are cookies that have not yet been categorized.</div>
+            </div>
+            <button id="cookie-save-accept" style="margin:2rem auto 0 auto;display:block;background:#1a237e;color:#fff;border:none;padding:0.8rem 2.2rem;border-radius:3px;font-size:1.1rem;font-weight:bold;cursor:pointer;">Save & Accept</button>
+          </div>
+        </div>
+      `;
+      var tempDiv = document.createElement('div');
+      tempDiv.innerHTML = cookieBannerHTML;
+      document.body.appendChild(tempDiv);
+    });
+    // Cookie banner handlers (same as before)
+    document.addEventListener('DOMContentLoaded', function() {
+        var cookieBanner = document.getElementById('cookie-banner');
+        var cookieClose = document.getElementById('cookie-close');
+        var cookieAccept = document.getElementById('cookie-accept');
+        var cookieSettings = document.getElementById('cookie-settings');
+        if(cookieBanner && cookieClose) {
+            cookieClose.addEventListener('click', function() {
+                cookieBanner.style.display = 'none';
+            });
+        }
+        if(cookieBanner && cookieAccept) {
+            cookieAccept.addEventListener('click', function() {
+                cookieBanner.style.display = 'none';
+                // Here you can set a cookie or localStorage to remember consent
+            });
+        }
+        if(cookieBanner && cookieSettings) {
+            cookieSettings.addEventListener('click', function() {
+                var modal = document.getElementById('cookie-modal');
+                if(modal) modal.style.display = 'flex';
+            });
+        }
+        var cookieModal = document.getElementById('cookie-modal');
+        var cookieModalClose = document.getElementById('cookie-modal-close');
+        if(cookieModal && cookieModalClose) {
+            cookieModalClose.addEventListener('click', function() {
+                cookieModal.style.display = 'none';
+            });
+            // Optional: close modal when clicking outside the modal content
+            cookieModal.addEventListener('click', function(e) {
+                if(e.target === cookieModal) cookieModal.style.display = 'none';
+            });
+        }
+        // Cookie Modal Show More logic
+        var cookieModalText = document.getElementById('cookie-modal-text');
+        var cookieModalShowMore = document.getElementById('cookie-modal-showmore');
+        var fullText = "This website uses cookies to improve your experience while you navigate through the website. Out of these, the cookies that are categorized as necessary are stored on your browser as they are essential for the working of basic functionalities of the website. We also use third-party cookies that help us analyze and understand how you use this website. These cookies will be stored in your browser only with your consent. You also have the option to opt-out of these cookies. But opting out of some of these cookies may affect your browsing experience.";
+        var shortText = fullText.slice(0, 258) + (fullText.length > 258 ? '...' : '');
+        if(cookieModalText && cookieModalShowMore) {
+            cookieModalText.textContent = shortText;
+            cookieModalShowMore.style.display = fullText.length > 258 ? 'inline-block' : 'none';
+            cookieModalShowMore.addEventListener('click', function() {
+                cookieModalText.textContent = fullText;
+                cookieModalShowMore.style.display = 'none';
+            });
+        }
+        // Cookie toggles switch logic (all except essential)
+        var cookieSwitches = document.querySelectorAll('.cookie-switch');
+        cookieSwitches.forEach(function(switchEl) {
+            var input = switchEl.querySelector('input[type="checkbox"]');
+            var bg = switchEl.querySelector('.cookie-bg');
+            var knob = switchEl.querySelector('.cookie-knob');
+            function updateSwitch() {
+                if (input.checked) {
+                    bg.style.backgroundColor = '#1a237e';
+                    knob.style.left = '21px';
+                } else {
+                    bg.style.backgroundColor = '#ccc';
+                    knob.style.left = '3px';
+                }
+            }
+            input.addEventListener('change', updateSwitch);
+            updateSwitch();
+        });
+        // Expand/collapse logic for cookie descriptions
+        var expandBtns = document.querySelectorAll('.cookie-expand');
+        var descs = document.querySelectorAll('.cookie-desc');
+        expandBtns.forEach(function(btn, idx) {
+            btn.addEventListener('click', function() {
+                var desc = descs[idx];
+                var expanded = desc.style.display === 'block';
+                desc.style.display = expanded ? 'none' : 'block';
+                btn.innerHTML = expanded ? '&#9654;' : '&#9660;';
+            });
+        });
+        // Save & Accept button handler
+        var saveAcceptBtn = document.getElementById('cookie-save-accept');
+        if (saveAcceptBtn) {
+            saveAcceptBtn.addEventListener('click', function() {
+                var settings = {
+                    functional: document.getElementById('functional-toggle').checked,
+                    analytics: document.getElementById('analytics-toggle').checked,
+                    performance: document.getElementById('performance-toggle').checked,
+                    advertisement: document.getElementById('advertisement-toggle').checked,
+                    social: document.getElementById('social-toggle').checked,
+                    unclassified: document.getElementById('unclassified-toggle').checked
+                };
+                // You can store settings in localStorage or send to server here
+                var cookieModal = document.getElementById('cookie-modal');
+                if(cookieModal) cookieModal.style.display = 'none';
+                // Optionally, hide the banner as well
+                var cookieBanner = document.getElementById('cookie-banner');
+                if(cookieBanner) cookieBanner.style.display = 'none';
+            });
+        }
+    });
+    </script>

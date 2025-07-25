@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital IT Solutions|Digital Transformation Consulting Services</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="images/assets/logo.png">
+    <style>
+      /* Main menu links: allow pointer events for hover on desktop, block clicks */
+      .nav-links > li > a {
+        pointer-events: none;
+        cursor: default;
+      }
+      @media (max-width: 900px) {
+        .nav-links > li > a {
+          pointer-events: auto;
+        }
+      }
+      /* Split hero/services layout */
+      .homepage-flex {
+        display: flex;
+        flex-direction: row;
+        min-height: 420px;
+        max-width: 1400px;
+        margin: 0 auto 2.5rem auto;
+        gap: 0;
+      }
+      .hero-half {
+        flex: 1 1 50%;
+        min-width: 0;
+        background: url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=900&q=80') center/cover no-repeat;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 3.5rem 2rem 3.5rem 2.5rem;
+        border-radius: 0 0 0 24px;
+        color: #fff;
+        position: relative;
+        min-height: 420px;
+      }
+      .hero-half h1, .hero-half p {
+        color: #183153 !important;
+        text-shadow: none !important;
+      }
+      .hero-half a {
+        color: #fff !important;
+        text-shadow: 0 2px 8px rgba(26,35,126,0.18);
+      }
+      .hero-half h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1.2rem;
+      }
+      .hero-half p {
+        font-size: 1.15rem;
+        margin-bottom: 2rem;
+      }
+      .hero-half .cta-btn {
+        font-size: 1.1rem;
+        padding: 0.8rem 2.2rem;
+        border-radius: 6px;
+        background: #00B8D9;
+        color: #fff;
+        font-weight: bold;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+      }
+      .services-half {
+        flex: 1 1 50%;
+        min-width: 0;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0 0 0 0.5rem;
+        border-radius: 0 0 24px 0;
+        overflow: hidden;
+      }
+      .services-showcase {
+        display: flex;
+        flex-direction: row;
+        gap: 2.5rem;
+        overflow-x: auto;
+        padding: 2.5rem 1.5rem 2.5rem 0.5rem;
+        scrollbar-width: thin;
+        scrollbar-color: #1A237E #F0F4F8;
+        max-width: 100vw;
+        min-width: 0;
+      }
+      .services-showcase::-webkit-scrollbar {
+        height: 12px;
+      }
+      .services-showcase::-webkit-scrollbar-thumb {
+        background: #1A237E;
+        border-radius: 6px;
+      }
+      .services-showcase::-webkit-scrollbar-track {
+        background: #F0F4F8;
+      }
+      .service-card {
+        min-width: 320px !important;
+        max-width: 380px;
+        background: #fff;
+        border-radius: 14px;
+        box-shadow: 0 2px 16px rgba(26,35,126,0.10);
+        padding: 2rem 1.2rem 1.5rem 1.2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 0.5rem;
+      }
+      .service-card img {
+        width: 220px;
+        height: 140px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+      }
+      @media (max-width: 900px) {
+        .homepage-flex {
+          flex-direction: column;
+        }
+        .hero-half, .services-half {
+          border-radius: 0 !important;
+          min-height: 260px;
+          padding: 2rem 1rem 2rem 1rem;
+        }
+        .services-showcase {
+          padding: 1.5rem 0.5rem 1.5rem 0.5rem;
+        }
+      }
+      /* Large hero background image */
+      .hero {
+        background: url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+        min-height: 380px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 3.5rem 2rem 3.5rem 2rem;
+        border-radius: 0 0 24px 24px;
+        box-shadow: 0 4px 32px rgba(26,35,126,0.10);
+        color: #fff;
+        position: relative;
+        margin-bottom: 2.5rem;
+      }
+      .hero h1, .hero p, .hero a {
+        color: #fff !important;
+        text-shadow: 0 2px 8px rgba(26,35,126,0.18);
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1.2rem;
+      }
+      .hero p {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+      }
+      .hero .cta-btn {
+        font-size: 1.1rem;
+        padding: 0.8rem 2.2rem;
+        border-radius: 6px;
+        background: #00B8D9;
+        color: #fff;
+        font-weight: bold;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+      }
+      /* Horizontally scrollable services section */
+      .services-showcase {
+        display: flex;
+        flex-direction: row;
+        gap: 2.5rem;
+        overflow-x: auto;
+        padding-bottom: 1.5rem;
+        scrollbar-width: thin;
+        scrollbar-color: #1A237E #F0F4F8;
+        max-width: 100vw;
+      }
+      .services-showcase::-webkit-scrollbar {
+        height: 12px;
+      }
+      .services-showcase::-webkit-scrollbar-thumb {
+        background: #1A237E;
+        border-radius: 6px;
+      }
+      .services-showcase::-webkit-scrollbar-track {
+        background: #F0F4F8;
+      }
+      .service-card {
+        min-width: 380px !important;
+        max-width: 420px;
+        background: #fff;
+        border-radius: 14px;
+        box-shadow: 0 2px 16px rgba(26,35,126,0.10);
+        padding: 2.5rem 1.5rem 2rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 0.5rem;
+      }
+      .service-card img {
+        width: 220px;
+        height: 140px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+      }
+      /* --- Submenu fix for Edge and all browsers --- */
+      .nav-links {
+        overflow: visible !important;
+      }
+      .nav-links > li > .dropdown {
+        z-index: 1200;
+      }
+      .nav-links .submenu-parent {
+        position: relative;
+      }
+      .nav-links .dropdown.submenu {
+        left: 100% !important;
+        top: 0 !important;
+        min-width: 200px !important;
+        display: none;
+        position: absolute;
+        z-index: 1400 !important;
+      }
+      .submenu-parent:hover > .dropdown.submenu,
+      .submenu-parent:focus-within > .dropdown.submenu {
+        display: block !important;
+      }
+      /* Edge submenu persistence fix: add invisible padding to dropdowns to prevent accidental mouseout */
+      .nav-links .dropdown {
+        padding-top: 8px;
+        margin-top: -8px;
+      }
+      /* Fallback for :has() selector for Edge: keep dropdown open if hovered or parent hovered */
+      .nav-links > li:hover > .dropdown,
+      .nav-links > li:focus-within > .dropdown,
+      .nav-links > li:has(:hover) > .dropdown {
+        display: block !important;
+        pointer-events: auto !important;
+      }
+      /* Remove :has() selector for Edge compatibility */
+      body {
+        background: #e3f2fd !important;
+        color: #183153;
+      }
+      header, footer {
+        background: #1A237E !important;
+        color: #e3f2fd !important;
+      }
+      .logo, .nav-links a, footer p {
+        color: #e3f2fd !important;
+      }
+      .nav-links a:hover {
+        color: #1976d2 !important;
+      }
+      main, section, .features, .hero {
+        background: inherit !important;
+        color: #183153 !important;
+      }
+      .nav-links .dropdown {
+        transition: none !important;
+        pointer-events: auto !important;
+        background: #183153 !important;
+        color: #e3f2fd !important;
+      }
+      .nav-links .dropdown a {
+        color: #e3f2fd !important;
+      }
+      .nav-links .dropdown a:hover {
+        color: #FFB300 !important;
+        background: #25406b !important;
+      }
+      .nav-links > li {
+        z-index: 1300;
+      }
+      .nav-links > li:hover > .dropdown,
+      .nav-links > li:focus-within > .dropdown {
+        display: block !important;
+        pointer-events: auto !important;
+      }
+      .nav-links .dropdown {
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+      h1, h2, h3, h4 {
+        color: #183153;
+      }
+      a {
+        color: #1976d2;
+        text-decoration: underline;
+      }
+      a:hover {
+        color: #FFB300;
+      }
+      button, .cta-btn {
+        background: #00B8D9;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        padding: 0.5rem 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      button:hover, .cta-btn:hover {
+        background: #0097A7;
+      }
+      /* Accent highlight for important info */
+      .highlight, mark {
+        background: #FFB300;
+        color: #183153;
+        padding: 0 0.2em;
+        border-radius: 2px;
+      }
+      /* Responsive Cookie Modal Styles */
+      @media (max-width: 600px) {
+        #cookie-modal > div {
+          max-width: 100vw !important;
+          width: 100vw !important;
+          min-width: 0 !important;
+          padding: 1rem 0.2rem 1rem 0.2rem !important;
+          font-size: 1rem !important;
+          box-sizing: border-box;
+          overflow-y: auto;
+          max-height: 98vh;
+        }
+        #cookie-modal h2 {
+          font-size: 1.05rem !important;
+          margin-bottom: 0.7rem !important;
+          margin-top: 0.2rem !important;
+          word-break: break-word;
+        }
+        #cookie-modal p, #cookie-modal span {
+          font-size: 0.97rem !important;
+          word-break: break-word;
+        }
+        #cookie-modal .cookie-switch {
+          width: 36px !important;
+          height: 20px !important;
+        }
+        #cookie-modal .cookie-knob {
+          width: 14px !important;
+          height: 14px !important;
+          top: 3px !important;
+        }
+        #cookie-modal label {
+          min-width: 100px !important;
+          font-size: 0.97rem !important;
+          word-break: break-word;
+        }
+        #cookie-modal button#cookie-save-accept {
+          width: 96vw;
+          font-size: 1rem;
+          padding: 0.7rem 0;
+        }
+        #cookie-modal > div > div {
+          flex-direction: column !important;
+          gap: 0.5rem !important;
+          align-items: flex-start !important;
+        }
+      }
+    </style>
+</head>
+<body>
+    <div class="top-banner" style="width:100%;background:#F0F4F8;border-bottom:1px solid #E0E0E0;padding:0.2rem 0;position:sticky;top:0;z-index:1100;">
+      <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:flex-end;align-items:center;">
+        <ul style="display:flex;gap:1.2rem;list-style:none;margin:0;padding:0;justify-content:flex-end;align-items:center;width:100%;background:transparent;">
+          <li><a href="#" style="color:#1A237E;font-weight:500;text-decoration:none;font-size:0.97rem;">Careers</a></li>
+          <li><a href="#" style="color:#1A237E;font-weight:500;text-decoration:none;font-size:0.97rem;">News &amp; Events</a></li>
+          <li><a href="#" style="color:#1A237E;font-weight:500;text-decoration:none;font-size:0.97rem;">Blog</a></li>
+          <li><a href="contact.html" style="color:#1A237E;font-weight:500;text-decoration:none;font-size:0.97rem;">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <header style="position:sticky;top:2.2rem;z-index:1099;box-shadow:0 2px 8px rgba(0,0,0,0.03);">
+        <nav style="display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;min-height:56px;">
+            <div class="logo" style="font-size:1.25rem;font-weight:bold;letter-spacing:0.5px;">Quenti Solutions</div>
+            <ul class="nav-links" style="display:flex;gap:2rem;list-style:none;margin:0;padding:0;justify-content:flex-end;align-items:center;position:relative;">
+                <li class="nav-item" style="position:relative;">
+                  <a href="services.html" style="font-size:1rem;letter-spacing:0.5px;text-transform:uppercase;display:flex;align-items:center;gap:0.3em;" tabindex="0">SERVICES <span style="font-size:0.9em;">&#9662;</span></a>
+                  <ul class="dropdown" style="display:none;position:absolute;top:2.2em;right:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);border-radius:4px;min-width:180px;padding:0.5em 0;z-index:1200;list-style:none;">
+                    <li><a href="artificial-intelligence.html" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">AI/ML</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item" style="position:relative;">
+                  <span style="font-size:1rem;letter-spacing:0.5px;text-transform:uppercase;display:flex;align-items:center;gap:0.3em;" tabindex="0">INDUSTRIES <span style="font-size:0.9em;">&#9662;</span></span>
+                  <ul class="dropdown" style="display:none;position:absolute;top:2.2em;right:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);border-radius:4px;min-width:160px;padding:0.5em 0;z-index:1200;list-style:none;">
+                    <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Banking</a></li>
+                    <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Healthcare</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item" style="position:relative;">
+                  <span style="font-size:1rem;letter-spacing:0.5px;text-transform:uppercase;display:flex;align-items:center;gap:0.3em;" tabindex="0">INSIGHTS <span style="font-size:0.9em;">&#9662;</span></span>
+                  <ul class="dropdown" style="display:none;position:absolute;top:2.2em;right:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);border-radius:4px;min-width:160px;padding:0.5em 0;z-index:1200;list-style:none;">
+                    <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Whitepapers</a></li>
+                    <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Case Studies</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item" style="position:relative;">
+                  <span style="font-size:1rem;letter-spacing:0.5px;text-transform:uppercase;display:flex;align-items:center;gap:0.3em;" tabindex="0">PARTNERS <span style="font-size:0.9em;">&#9662;</span></span>
+                  <ul class="dropdown" style="display:none;position:absolute;top:2.2em;right:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);border-radius:4px;min-width:160px;padding:0.5em 0;z-index:1200;list-style:none;">
+                    <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Technology</a></li>
+                    <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Consulting</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item" style="position:relative;">
+                  <span style="font-size:1rem;letter-spacing:0.5px;text-transform:uppercase;display:flex;align-items:center;gap:0.3em;" tabindex="0">SOLUTIONS <span style="font-size:0.9em;">&#9662;</span></span>
+                  <ul class="dropdown" style="display:none;position:absolute;top:2.2em;right:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);border-radius:4px;min-width:160px;padding:0.5em 0;z-index:1200;list-style:none;">
+                    <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">ERP</a></li>
+                    <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">CRM</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item" style="position:relative;">
+                  <a href="about.html" style="font-size:1rem;letter-spacing:0.5px;text-transform:uppercase;display:flex;align-items:center;gap:0.3em;" tabindex="0">ABOUT US <span style="font-size:0.9em;">&#9662;</span></a>
+                  <ul class="dropdown" style="display:none;position:absolute;top:2.2em;right:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);border-radius:4px;min-width:160px;padding:0.5em 0;z-index:1200;list-style:none;">
+                    <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Our Story</a></li>
+                    <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Leadership</a></li>
+                  </ul>
+                </li>
+    <script>
+    // Dropdown menu logic for nav: JS only for mobile (<=900px), desktop is pure CSS hover
+    document.addEventListener('DOMContentLoaded', function() {
+      function isMobile() {
+        return window.innerWidth <= 900;
+      }
+      function setupMobileDropdowns() {
+        var navItems = document.querySelectorAll('.nav-item');
+        navItems.forEach(function(item) {
+          var link = item.querySelector('a');
+          var dropdown = item.querySelector('.dropdown');
+          if (!dropdown) return;
+          link.onclick = function(e) {
+            if (isMobile()) {
+              e.preventDefault();
+              var isOpen = dropdown.style.display === 'block';
+              document.querySelectorAll('.nav-links .dropdown').forEach(function(dd) {
+                dd.style.display = 'none';
+              });
+              dropdown.style.display = isOpen ? 'none' : 'block';
+            }
+          };
+        });
+        // Submenus (if any)
+        var submenuParents = document.querySelectorAll('.submenu-parent');
+        submenuParents.forEach(function(parent) {
+          var submenuLink = parent.querySelector('a');
+          var submenu = parent.querySelector('.submenu');
+          if (!submenu) return;
+          submenuLink.onclick = function(e) {
+            if (isMobile()) {
+              e.preventDefault();
+              var isOpen = submenu.style.display === 'block';
+              document.querySelectorAll('.dropdown.submenu').forEach(function(sm) {
+                sm.style.display = 'none';
+              });
+              submenu.style.display = isOpen ? 'none' : 'block';
+            }
+          };
+        });
+      }
+      function resetDropdowns() {
+        document.querySelectorAll('.nav-links .dropdown').forEach(function(dd) {
+          dd.style.display = '';
+        });
+        document.querySelectorAll('.dropdown.submenu').forEach(function(sm) {
+          sm.style.display = '';
+        });
+      }
+      setupMobileDropdowns();
+      window.addEventListener('resize', function() {
+        resetDropdowns();
+        setupMobileDropdowns();
+      });
+      // No JS for desktop: hover/focus handled by CSS only
+    });
+    </script>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="homepage-flex">
+          <section class="hero-half">
+            <h1>Empowering Your Business with IT & ITES Solutions</h1>
+            <p>Delivering innovative technology and business process services for a digital world.</p>
+            <a href="services.html" class="cta-btn">Our Services</a>
+          </section>
+          <section class="services-half">
+            <div class="services-showcase">
+              <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="AI/ML">
+                <h2>AI &amp; Machine Learning</h2>
+                <p>Unlock business value with Artificial Intelligence, Machine Learning, and Data Intelligence solutions tailored to your needs.</p>
+              </div>
+              <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80" alt="Cloud">
+                <h2>Cloud Solutions</h2>
+                <p>Scalable, secure, and cost-effective cloud services to accelerate your digital transformation journey.</p>
+              </div>
+              <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&q=80" alt="Cybersecurity">
+                <h2>Cybersecurity</h2>
+                <p>Protect your business with advanced cybersecurity solutions and proactive threat management.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Quenti Solutions. All rights reserved.</p>
+    </footer>
+    <!-- Cookie banner and modal will be injected dynamically by JavaScript -->
+    <script src="js/main.js"></script>
+<script>
+// Dynamically inject cookie banner and modal
+document.addEventListener('DOMContentLoaded', function() {
+  // Cookie Banner HTML
+  var cookieBannerHTML = `
+    <div id="cookie-banner" style="position:fixed;bottom:0;left:0;width:100%;background:#222;color:#fff;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;z-index:1000;flex-wrap:wrap;gap:1rem;">
+      <span style="flex:1 1 300px;min-width:100px;font-size:small">We use cookies on our website to give you the most relevant experience by remembering your preferences and repeat visits. By clicking “Accept All”, you consent to the use of ALL the cookies. However, you may visit <b>Cookie Settings</b> to provide a controlled consent. <a href="cookie-policy.html" style="color:#ffb300;text-decoration:underline;">Cookie Policy</a></span>
+      <div style="display:flex;gap:0.5rem;align-items:center;">
+        <button id="cookie-accept" style="background:#ffb300;color:#222;border:none;padding:0.5rem 1.2rem;border-radius:3px;font-weight:bold;cursor:pointer;">Accept All</button>
+        <button id="cookie-settings" style="background:#fff;color:#222;border:none;padding:0.5rem 1.2rem;border-radius:3px;font-weight:bold;cursor:pointer;">Cookie Settings</button>
+        <button id="cookie-close" style="background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;line-height:1;">&times;</button>
+      </div>
+    </div>
+    <div id="cookie-modal" style="display:none;position:fixed;z-index:2000;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,0.4);justify-content:center;align-items:center;">
+      <div style="background:#fff;color:#222;max-width:420px;width:90vw;padding:2rem 1.5rem 1.5rem 1.5rem;border-radius:8px;box-shadow:0 4px 24px rgba(0,0,0,0.18);position:relative;">
+        <button id="cookie-modal-close" style="position:absolute;top:10px;right:14px;background:none;border:none;font-size:1.7rem;color:#222;cursor:pointer;">&times;</button>
+        <h2 style="margin-top:0;">Privacy Overview</h2>
+        <p id="cookie-modal-text" style="font-size:1rem;line-height:1.6;">
+          This website uses cookies to improve your experience while you navigate through the website. Out of these, the cookies that are categorized as necessary are stored on your browser as they are essential for the working of basic functionalities of the website. We also use third-party cookies that help us analyze and understand how you use this website. These cookies will be stored in your browser only with your consent. You also have the option to opt-out of these cookies. But opting out of some of these cookies may affect your browsing experience.
+        </p>
+        <button id="cookie-modal-showmore" style="background:#ffb300;color:#222;border:none;padding:0.4rem 1.1rem;border-radius:3px;font-weight:bold;cursor:pointer;display:inline-block;margin-top:0.5rem;">Show More</button>
+        <div style="margin-top:1.5rem;padding:1rem;background:#f5f5f5;border-radius:6px;display:flex;flex-direction:column;gap:1rem;flex-wrap:wrap;">
+          <div class="cookie-row" style="display:flex;align-items:center;gap:0.7rem;flex-wrap:wrap;">
+            <button class="cookie-expand" aria-label="Expand" style="background:none;border:none;font-size:1.2rem;cursor:pointer;line-height:1;">&#9654;</button>
+            <label style="display:flex;align-items:center;gap:0.7rem;font-weight:500;min-width:120px;margin-bottom:0;">
+              Essential Cookies
+              <input type="checkbox" checked disabled style="accent-color:#1a237e;width:1.3em;height:1.3em;">
+            </label>
+          </div>
+          <div class="cookie-desc" style="display:none;font-size:0.97rem;color:#444;margin-left:2.2rem;">These cookies are necessary for the website to function and cannot be switched off in our systems.</div>
+          <div class="cookie-row" style="display:flex;align-items:center;gap:0.7rem;flex-wrap:wrap;">
+            <button class="cookie-expand" aria-label="Expand" style="background:none;border:none;font-size:1.2rem;cursor:pointer;line-height:1;">&#9654;</button>
+            <label style="display:flex;align-items:center;gap:0.7rem;font-weight:500;min-width:120px;margin-bottom:0;">
+              Functional Cookies
+              <span class="cookie-switch" style="position:relative;display:inline-block;width:40px;height:22px;">
+                <input type="checkbox" id="functional-toggle" style="opacity:0;width:40px;height:22px;cursor:pointer;z-index:2;position:absolute;top:0;left:0;margin:0;">
+                <span class="cookie-bg" style="position:absolute;top:0;left:0;right:0;bottom:0;background-color:#ccc;border-radius:22px;transition:.4s;"></span>
+                <span class="cookie-knob" style="position:absolute;left:3px;top:3px;width:16px;height:16px;background:#fff;border-radius:50%;transition:.4s;"></span>
+              </span>
+            </label>
+          </div>
+          <div class="cookie-desc" style="display:none;font-size:0.97rem;color:#444;margin-left:2.2rem;">These cookies enable enhanced functionality and personalization, such as videos and live chats.</div>
+          <div class="cookie-row" style="display:flex;align-items:center;gap:0.7rem;flex-wrap:wrap;">
+            <button class="cookie-expand" aria-label="Expand" style="background:none;border:none;font-size:1.2rem;cursor:pointer;line-height:1;">&#9654;</button>
+            <label style="display:flex;align-items:center;gap:0.7rem;font-weight:500;min-width:120px;margin-bottom:0;">
+              Analytics Cookies
+              <span class="cookie-switch" style="position:relative;display:inline-block;width:40px;height:22px;">
+                <input type="checkbox" id="analytics-toggle" style="opacity:0;width:40px;height:22px;cursor:pointer;z-index:2;position:absolute;top:0;left:0;margin:0;">
+                <span class="cookie-bg" style="position:absolute;top:0;left:0;right:0;bottom:0;background-color:#ccc;border-radius:22px;transition:.4s;"></span>
+                <span class="cookie-knob" style="position:absolute;left:3px;top:3px;width:16px;height:16px;background:#fff;border-radius:50%;transition:.4s;"></span>
+              </span>
+            </label>
+          </div>
+          <div class="cookie-desc" style="display:none;font-size:0.97rem;color:#444;margin-left:2.2rem;">These cookies help us understand how visitors interact with our website, discover errors, and provide better overall analytics.</div>
+          <div class="cookie-row" style="display:flex;align-items:center;gap:0.7rem;flex-wrap:wrap;">
+            <button class="cookie-expand" aria-label="Expand" style="background:none;border:none;font-size:1.2rem;cursor:pointer;line-height:1;">&#9654;</button>
+            <label style="display:flex;align-items:center;gap:0.7rem;font-weight:500;min-width:120px;margin-bottom:0;">
+              Performance Cookies
+              <span class="cookie-switch" style="position:relative;display:inline-block;width:40px;height:22px;">
+                <input type="checkbox" id="performance-toggle" style="opacity:0;width:40px;height:22px;cursor:pointer;z-index:2;position:absolute;top:0;left:0;margin:0;">
+                <span class="cookie-bg" style="position:absolute;top:0;left:0;right:0;bottom:0;background-color:#ccc;border-radius:22px;transition:.4s;"></span>
+                <span class="cookie-knob" style="position:absolute;left:3px;top:3px;width:16px;height:16px;background:#fff;border-radius:50%;transition:.4s;"></span>
+              </span>
+            </label>
+          </div>
+          <div class="cookie-desc" style="display:none;font-size:0.97rem;color:#444;margin-left:2.2rem;">These cookies are used to enhance the performance and functionality of our website but are non-essential to their use.</div>
+          <div class="cookie-row" style="display:flex;align-items:center;gap:0.7rem;flex-wrap:wrap;">
+            <button class="cookie-expand" aria-label="Expand" style="background:none;border:none;font-size:1.2rem;cursor:pointer;line-height:1;">&#9654;</button>
+            <label style="display:flex;align-items:center;gap:0.7rem;font-weight:500;min-width:120px;margin-bottom:0;">
+              Advertisement Cookies
+              <span class="cookie-switch" style="position:relative;display:inline-block;width:40px;height:22px;">
+                <input type="checkbox" id="advertisement-toggle" style="opacity:0;width:40px;height:22px;cursor:pointer;z-index:2;position:absolute;top:0;left:0;margin:0;">
+                <span class="cookie-bg" style="position:absolute;top:0;left:0;right:0;bottom:0;background-color:#ccc;border-radius:22px;transition:.4s;"></span>
+                <span class="cookie-knob" style="position:absolute;left:3px;top:3px;width:16px;height:16px;background:#fff;border-radius:50%;transition:.4s;"></span>
+              </span>
+            </label>
+          </div>
+          <div class="cookie-desc" style="display:none;font-size:0.97rem;color:#444;margin-left:2.2rem;">These cookies are used to deliver advertisements that are relevant to you and your interests.</div>
+          <div class="cookie-row" style="display:flex;align-items:center;gap:0.7rem;flex-wrap:wrap;">
+            <button class="cookie-expand" aria-label="Expand" style="background:none;border:none;font-size:1.2rem;cursor:pointer;line-height:1;">&#9654;</button>
+            <label style="display:flex;align-items:center;gap:0.7rem;font-weight:500;min-width:120px;margin-bottom:0;">
+              Social Networking Cookies
+              <span class="cookie-switch" style="position:relative;display:inline-block;width:40px;height:22px;">
+                <input type="checkbox" id="social-toggle" style="opacity:0;width:40px;height:22px;cursor:pointer;z-index:2;position:absolute;top:0;left:0;margin:0;">
+                <span class="cookie-bg" style="position:absolute;top:0;left:0;right:0;bottom:0;background-color:#ccc;border-radius:22px;transition:.4s;"></span>
+                <span class="cookie-knob" style="position:absolute;left:3px;top:3px;width:16px;height:16px;background:#fff;border-radius:50%;transition:.4s;"></span>
+              </span>
+            </label>
+          </div>
+          <div class="cookie-desc" style="display:none;font-size:0.97rem;color:#444;margin-left:2.2rem;">These cookies are set by social media services to enable you to share our content with your friends and networks.</div>
+          <div class="cookie-row" style="display:flex;align-items:center;gap:0.7rem;flex-wrap:wrap;">
+            <button class="cookie-expand" aria-label="Expand" style="background:none;border:none;font-size:1.2rem;cursor:pointer;line-height:1;">&#9654;</button>
+            <label style="display:flex;align-items:center;gap:0.7rem;font-weight:500;min-width:120px;margin-bottom:0;">
+              Unclassified Cookies
+              <span class="cookie-switch" style="position:relative;display:inline-block;width:40px;height:22px;">
+                <input type="checkbox" id="unclassified-toggle" style="opacity:0;width:40px;height:22px;cursor:pointer;z-index:2;position:absolute;top:0;left:0;margin:0;">
+                <span class="cookie-bg" style="position:absolute;top:0;left:0;right:0;bottom:0;background-color:#ccc;border-radius:22px;transition:.4s;"></span>
+                <span class="cookie-knob" style="position:absolute;left:3px;top:3px;width:16px;height:16px;background:#fff;border-radius:50%;transition:.4s;"></span>
+              </span>
+            </label>
+          </div>
+          <div class="cookie-desc" style="display:none;font-size:0.97rem;color:#444;margin-left:2.2rem;">These are cookies that have not yet been categorized.</div>
+        </div>
+        <button id="cookie-save-accept" style="margin:2rem auto 0 auto;display:block;background:#1a237e;color:#fff;border:none;padding:0.8rem 2.2rem;border-radius:3px;font-size:1.1rem;font-weight:bold;cursor:pointer;">Save & Accept</button>
+      </div>
+    </div>
+  `;
+  var tempDiv = document.createElement('div');
+  tempDiv.innerHTML = cookieBannerHTML;
+  document.body.appendChild(tempDiv);
+});
+</script>
+    <script>
+    // Cookie banner handlers
+    document.addEventListener('DOMContentLoaded', function() {
+        var cookieBanner = document.getElementById('cookie-banner');
+        var cookieClose = document.getElementById('cookie-close');
+        var cookieAccept = document.getElementById('cookie-accept');
+        var cookieSettings = document.getElementById('cookie-settings');
+        if(cookieBanner && cookieClose) {
+            cookieClose.addEventListener('click', function() {
+                cookieBanner.style.display = 'none';
+            });
+        }
+        if(cookieBanner && cookieAccept) {
+            cookieAccept.addEventListener('click', function() {
+                cookieBanner.style.display = 'none';
+                // Here you can set a cookie or localStorage to remember consent
+            });
+        }
+        if(cookieBanner && cookieSettings) {
+            cookieSettings.addEventListener('click', function() {
+                var modal = document.getElementById('cookie-modal');
+                if(modal) modal.style.display = 'flex';
+            });
+        }
+        var cookieModal = document.getElementById('cookie-modal');
+        var cookieModalClose = document.getElementById('cookie-modal-close');
+        if(cookieModal && cookieModalClose) {
+            cookieModalClose.addEventListener('click', function() {
+                cookieModal.style.display = 'none';
+            });
+            // Optional: close modal when clicking outside the modal content
+            cookieModal.addEventListener('click', function(e) {
+                if(e.target === cookieModal) cookieModal.style.display = 'none';
+            });
+        }
+        // Cookie Modal Show More logic
+        var cookieModalText = document.getElementById('cookie-modal-text');
+        var cookieModalShowMore = document.getElementById('cookie-modal-showmore');
+        var fullText = "This website uses cookies to improve your experience while you navigate through the website. Out of these, the cookies that are categorized as necessary are stored on your browser as they are essential for the working of basic functionalities of the website. We also use third-party cookies that help us analyze and understand how you use this website. These cookies will be stored in your browser only with your consent. You also have the option to opt-out of these cookies. But opting out of some of these cookies may affect your browsing experience.";
+        var shortText = fullText.slice(0, 258) + (fullText.length > 258 ? '...' : '');
+        if(cookieModalText && cookieModalShowMore) {
+            cookieModalText.textContent = shortText;
+            cookieModalShowMore.style.display = fullText.length > 258 ? 'inline-block' : 'none';
+            cookieModalShowMore.addEventListener('click', function() {
+                cookieModalText.textContent = fullText;
+                cookieModalShowMore.style.display = 'none';
+            });
+        }
+        // Cookie toggles switch logic (all except essential)
+        var cookieSwitches = document.querySelectorAll('.cookie-switch');
+        cookieSwitches.forEach(function(switchEl) {
+            var input = switchEl.querySelector('input[type="checkbox"]');
+            var bg = switchEl.querySelector('.cookie-bg');
+            var knob = switchEl.querySelector('.cookie-knob');
+            function updateSwitch() {
+                if (input.checked) {
+                    bg.style.backgroundColor = '#1a237e';
+                    knob.style.left = '21px';
+                } else {
+                    bg.style.backgroundColor = '#ccc';
+                    knob.style.left = '3px';
+                }
+            }
+            input.addEventListener('change', updateSwitch);
+            updateSwitch();
+        });
+        // Expand/collapse logic for cookie descriptions
+        var expandBtns = document.querySelectorAll('.cookie-expand');
+        var descs = document.querySelectorAll('.cookie-desc');
+        expandBtns.forEach(function(btn, idx) {
+            btn.addEventListener('click', function() {
+                var desc = descs[idx];
+                var expanded = desc.style.display === 'block';
+                desc.style.display = expanded ? 'none' : 'block';
+                btn.innerHTML = expanded ? '&#9654;' : '&#9660;';
+            });
+        });
+        // Save & Accept button handler
+        var saveAcceptBtn = document.getElementById('cookie-save-accept');
+        if (saveAcceptBtn) {
+            saveAcceptBtn.addEventListener('click', function() {
+                var settings = {
+                    functional: document.getElementById('functional-toggle').checked,
+                    analytics: document.getElementById('analytics-toggle').checked,
+                    performance: document.getElementById('performance-toggle').checked,
+                    advertisement: document.getElementById('advertisement-toggle').checked,
+                    social: document.getElementById('social-toggle').checked,
+                    unclassified: document.getElementById('unclassified-toggle').checked
+                };
+                // You can store settings in localStorage or send to server here
+                var cookieModal = document.getElementById('cookie-modal');
+                if(cookieModal) cookieModal.style.display = 'none';
+                // Optionally, hide the banner as well
+                var cookieBanner = document.getElementById('cookie-banner');
+                if(cookieBanner) cookieBanner.style.display = 'none';
+            });
+        }
+    });
+    </script>
+</body>
+</html>

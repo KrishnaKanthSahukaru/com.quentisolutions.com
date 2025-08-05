@@ -7,7 +7,16 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- All content will be injected dynamically by JavaScript -->
+    <div class="top-banner" style="width:100%;background:#F0F4F8;border-bottom:1px solid #E0E0E0;padding:0.2rem 0;position:sticky;top:0;z-index:1100;">
+      <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:flex-end;align-items:center;">
+        <ul style="display:flex;gap:1.2rem;list-style:none;margin:0;padding:0;justify-content:flex-end;align-items:center;width:100%;background:transparent;">
+          <li style="margin-left:auto;"><a href="#" style="color:#1A237E;font-weight:500;text-decoration:none;font-size:0.97rem;">Careers</a></li>
+          <li><a href="#" style="color:#1A237E;font-weight:500;text-decoration:none;font-size:0.97rem;">News &amp; Events</a></li>
+          <li><a href="#" style="color:#1A237E;font-weight:500;text-decoration:none;font-size:0.97rem;">Blog</a></li>
+          <li><a href="contact.html" style="color:#1A237E;font-weight:500;text-decoration:none;font-size:0.97rem;">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
     <script src="js/main.js"></script>
     <script>
     // Inject all page elements dynamically
@@ -16,7 +25,7 @@
       var headerHTML = `
         <header>
           <nav>
-            <div class="logo">Quenti Solutions</div>
+            <a href="index.html" class="logo" style="font-size:1.25rem;font-weight:bold;letter-spacing:0.5px;white-space:nowrap;display:inline-block;overflow:hidden;text-overflow:ellipsis;text-decoration:none;color:inherit;">Quenti Solutions</a>
             <ul class="nav-links">
               <li><a href="index.html">Home</a></li>
               <li><a href="services.html">Services</a></li>
@@ -47,6 +56,44 @@
             </ul>
           </section>
         </main>
+    <footer style="background:#1A237E;color:#fff;padding:2.2rem 2rem 1.2rem 2rem;">
+      <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:2.5rem;justify-content:space-between;">
+        <div style="min-width:220px;flex:1;">
+          <h3 style="color:#fff;margin-bottom:1rem;">SERVICES</h3>
+          <ul style="list-style:none;padding:0;margin:0;">
+            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">Digitization</a></li>
+            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">Software Development</a></li>
+            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">Quality Assurance</a></li>
+            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">Cloud Enablement</a></li>
+            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">Automation</a></li>
+            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">CRM</a></li>
+            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">ERP</a></li>
+            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">AI/ML, Analytics, &amp; Data Engineering</a></li>
+          </ul>
+        </div>
+        <div style="min-width:220px;flex:1;">
+          <h3 style="color:#fff;margin-bottom:1rem;">INDUSTRIES</h3>
+          <ul style="list-style:none;padding:0;margin:0;">
+            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">Banking</a></li>
+            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">Healthcare</a></li>
+            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">Technology</a></li>
+            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">Consulting</a></li>
+          </ul>
+        </div>
+        <div style="min-width:220px;flex:1;">
+          <h3 style="color:#fff;margin-bottom:1rem;">INSIGHTS</h3>
+          <ul style="list-style:none;padding:0;margin:0;">
+            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">Whitepapers</a></li>
+            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">Case Studies</a></li>
+            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">Blog</a></li>
+            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">News &amp; Events</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2.5rem;font-size:1rem;color:#e3f2fd;">
+        &copy; 2025 Quenti Solutions. All rights reserved.
+      </div>
+    </footer>
       `;
       // Footer
       var footerHTML = `

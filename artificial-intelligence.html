@@ -6,10 +6,57 @@
     <title>Artificial Intelligence | Quenti Solutions</title>
     <link rel="stylesheet" href="css/styles.css">
     <style>
+      /* Remove all margin-top from .ai-hero */
+      /* AI page: split layout for image and content */
+      .ai-flex {
+        display: flex;
+        flex-direction: row;
+        gap: 2.5rem;
+        max-width: 900px;
+        margin: 2.5rem auto 2rem auto;
+      }
+      .ai-img-half {
+      .ai-hero {
+        margin-top: 0;
+        background: url('images/assets/ai-content.png') center/contain no-repeat;
+        min-height: 380px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 0 2rem 3.5rem 2rem;
+        border-radius: 0 0 24px 24px;
+        box-shadow: 0 4px 32px rgba(26,35,126,0.10);
+        color: #fff;
+        position: relative;
+        margin-bottom: 2.5rem;
+      }
+        flex: 1 1 50%;
+        min-width: 0;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 16px rgba(26,35,126,0.08);
+        padding: 2.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      @media (max-width: 900px) {
+        .ai-flex {
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+        .ai-img-half img {
+          max-width: 100%;
+        }
+        .ai-content-half {
+          padding: 1.5rem 1rem;
+        }
+      }
       body { background: #F7FAFC; color: #222; }
       header, footer { background: #1A237E; color: #fff; }
       header .logo, header nav a, header nav ul li a {
-        color: #FFB300 !important;
+        color: #e3f2fd !important;
       }
       header nav a:hover, header nav ul li a:hover {
         color: #00B8D9 !important;
@@ -40,10 +87,17 @@
         pointer-events: auto !important;
       }
       .ai-hero {
-        background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        background: url('images/assets/ai-content.png') center top/cover no-repeat;
         min-height: 260px;
         display: flex;
-        align-items: flex-end;
+        flex-direction: column;
+        align-items: flex-start;
         padding: 2.5rem 2rem 1.5rem 2rem;
         color: #fff;
         border-radius: 0 0 24px 24px;
@@ -69,32 +123,94 @@
     </style>
 </head>
 <body>
-    <header style="padding:1.2rem 2rem;">
-        <div class="logo" style="font-size:1.25rem;font-weight:bold;letter-spacing:0.5px;">Quenti Solutions</div>
+    <div class="top-banner" style="width:100%;background:#F0F4F8;border-bottom:1px solid #E0E0E0;padding:0.2rem 0;position:sticky;top:0;z-index:1100;">
+      <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:flex-end;align-items:center;">
+        <ul style="display:flex;gap:1.2rem;list-style:none;margin:0;padding:0;justify-content:flex-end;align-items:center;width:100%;background:transparent;">
+          <li style="margin-left:auto;"><a href="#" style="color:#1A237E;font-weight:500;text-decoration:none;font-size:0.97rem;">Careers</a></li>
+          <li><a href="#" style="color:#1A237E;font-weight:500;text-decoration:none;font-size:0.97rem;">News &amp; Events</a></li>
+          <li><a href="#" style="color:#1A237E;font-weight:500;text-decoration:none;font-size:0.97rem;">Blog</a></li>
+          <li><a href="contact.html" style="color:#1A237E;font-weight:500;text-decoration:none;font-size:0.97rem;">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <header>
+        <nav style="display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;min-height:56px;">
+      <a href="index.html" class="logo" style="font-size:1.25rem;font-weight:bold;letter-spacing:0.5px;white-space:nowrap;display:inline-block;overflow:hidden;text-overflow:ellipsis;text-decoration:none;color:inherit;">Quenti Solutions</a>
+            <ul class="nav-links" style="display:flex;gap:2rem;list-style:none;margin:0;padding:0;justify-content:flex-end;align-items:center;position:relative;">
+                <li class="nav-item" style="position:relative;">
+                  <a href="services.html" style="font-size:1rem;letter-spacing:0.5px;text-transform:uppercase;display:flex;align-items:center;gap:0.3em;" tabindex="0">SERVICES <span style="font-size:0.9em;">&#9662;</span></a>
+                  <ul class="dropdown" style="display:none;position:absolute;top:2.2em;right:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);border-radius:4px;min-width:180px;padding:0.5em 0;z-index:1200;list-style:none;">
+                    <li><a href="artificial-intelligence.html" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">AI/ML</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item" style="position:relative;">
+                  <span style="font-size:1rem;letter-spacing:0.5px;text-transform:uppercase;display:flex;align-items:center;gap:0.3em;" tabindex="0">INDUSTRIES <span style="font-size:0.9em;">&#9662;</span></span>
+                  <ul class="dropdown" style="display:none;position:absolute;top:2.2em;right:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);border-radius:4px;min-width:160px;padding:0.5em 0;z-index:1200;list-style:none;">
+                    <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Banking</a></li>
+                    <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Healthcare</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item" style="position:relative;">
+                  <span style="font-size:1rem;letter-spacing:0.5px;text-transform:uppercase;display:flex;align-items:center;gap:0.3em;" tabindex="0">INSIGHTS <span style="font-size:0.9em;">&#9662;</span></span>
+                  <ul class="dropdown" style="display:none;position:absolute;top:2.2em;right:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);border-radius:4px;min-width:160px;padding:0.5em 0;z-index:1200;list-style:none;">
+                    <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Whitepapers</a></li>
+                    <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Case Studies</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item" style="position:relative;">
+                  <span style="font-size:1rem;letter-spacing:0.5px;text-transform:uppercase;display:flex;align-items:center;gap:0.3em;" tabindex="0">PARTNERS <span style="font-size:0.9em;">&#9662;</span></span>
+                  <ul class="dropdown" style="display:none;position:absolute;top:2.2em;right:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);border-radius:4px;min-width:160px;padding:0.5em 0;z-index:1200;list-style:none;">
+                    <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Technology</a></li>
+                    <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Consulting</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item" style="position:relative;">
+                  <span style="font-size:1rem;letter-spacing:0.5px;text-transform:uppercase;display:flex;align-items:center;gap:0.3em;" tabindex="0">SOLUTIONS <span style="font-size:0.9em;">&#9662;</span></span>
+                  <ul class="dropdown" style="display:none;position:absolute;top:2.2em;right:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);border-radius:4px;min-width:160px;padding:0.5em 0;z-index:1200;list-style:none;">
+                    <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">ERP</a></li>
+                    <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">CRM</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item" style="position:relative;">
+                  <a href="about.html" style="font-size:1rem;letter-spacing:0.5px;text-transform:uppercase;display:flex;align-items:center;gap:0.3em;" tabindex="0">ABOUT US <span style="font-size:0.9em;">&#9662;</span></a>
+                  <ul class="dropdown" style="display:none;position:absolute;top:2.2em;right:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);border-radius:4px;min-width:160px;padding:0.5em 0;z-index:1200;list-style:none;">
+                    <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Our Story</a></li>
+                    <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Leadership</a></li>
+                  </ul>
+                </li>
+            </ul>
+        </nav>
     </header>
+    
     <section class="ai-hero">
-      <h1>Artificial Intelligence</h1>
+      <div style="font-size:1rem;color:#fff;opacity:0.92;margin-top:5em;margin-bottom:0.7rem;margin-left:9.5em;letter-spacing:0.01em;text-shadow:0 2px 8px rgba(26,35,126,0.18);display:block;width:auto;">
+        <a href="index.html" style="color:#fff;text-decoration:underline;">Home</a> &gt;&gt; Artificial Intelligence
+      </div>
+      <h1 style="margin-top:0.2rem;margin-left:4em;">Artificial Intelligence</h1>
     </section>
     <main>
-      <div class="ai-content">
-        <h2>Artificial Intelligence at Quenti Solutions</h2>
-        <p>
-          Artificial Intelligence (AI) is revolutionizing the way businesses operate, enabling smarter decision-making, automation, and new levels of efficiency. At Quenti Solutions, we harness the power of AI to deliver innovative solutions tailored to your unique business needs.
-        </p>
-        <p>
-          Our AI services include:
-        </p>
-        <ul>
-          <li>Custom AI model development</li>
-          <li>Natural Language Processing (NLP)</li>
-          <li>Computer Vision</li>
-          <li>Predictive Analytics</li>
-          <li>Intelligent Automation</li>
-        </ul>
-        <p>
-          Whether you're looking to automate processes, gain deeper insights from your data, or create intelligent products, our team of experts can help you leverage AI for real business impact.
-        </p>
-        <a href="services.html" style="display:inline-block;margin-top:1.5rem;background:#00B8D9;color:#fff;padding:0.7rem 1.8rem;border-radius:5px;text-decoration:none;font-weight:bold;">Back to Services</a>
+      <div class="ai-flex">
+        <!-- Sub image removed as requested -->
+        <div class="ai-content-half">
+          <h2>Artificial Intelligence at Quenti Solutions</h2>
+          <p>
+            Artificial Intelligence (AI) is revolutionizing the way businesses operate, enabling smarter decision-making, automation, and new levels of efficiency. At Quenti Solutions, we harness the power of AI to deliver innovative solutions tailored to your unique business needs.
+          </p>
+          <p>
+            Our AI services include:
+          </p>
+          <ul>
+            <li>Custom AI model development</li>
+            <li>Natural Language Processing (NLP)</li>
+            <li>Computer Vision</li>
+            <li>Predictive Analytics</li>
+            <li>Intelligent Automation</li>
+          </ul>
+          <p>
+            Whether you're looking to automate processes, gain deeper insights from your data, or create intelligent products, our team of experts can help you leverage AI for real business impact.
+          </p>
+          <a href="services.html" style="display:inline-block;margin-top:1.5rem;background:#00B8D9;color:#fff;padding:0.7rem 1.8rem;border-radius:5px;text-decoration:none;font-weight:bold;">Back to Services</a>
+        </div>
       </div>
     </main>
     <footer style="padding:1.2rem 2rem;text-align:center;">

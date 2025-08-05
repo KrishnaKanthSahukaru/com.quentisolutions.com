@@ -14,14 +14,21 @@
     document.addEventListener('DOMContentLoaded', function() {
       // Header
       var headerHTML = `
-        <header>
+        <header style="padding:1.2rem 2rem;">
+<a href="index.html" class="logo" style="font-size:1.25rem;font-weight:bold;letter-spacing:0.5px;text-decoration:none;color:inherit;">Quenti Solutions</a>
           <nav>
-            <div class="logo">Quenti Solutions</div>
             <ul class="nav-links">
               <li><a href="index.html">Home</a></li>
-              <li><a href="services.html">Services</a></li>
               <li><a href="about.html">About</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
+              <li>
+                <a href="#">Services</a>
+                <ul class="dropdown">
+                  <li><a href="artificial-intelligence.html">Artificial Intelligence</a></li>
+                  <li><a href="services.html">All Services</a></li>
+                </ul>
+              </li>
+              <li><a href="careers.html">Careers</a></li>
+              <li><a href="contact.html">Contact</a></li>
             </ul>
           </nav>
         </header>

@@ -7,6 +7,44 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/png" href="images/assets/logo.png">
     <style>
+      /* Ensure Quenti Solutions is single line everywhere, including cookie banner/modal */
+      .logo, .cookie-logo {
+        white-space: nowrap !important;
+        display: inline-block !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+      }
+      /* Ensure logo is always on a single line */
+      .logo {
+        white-space: nowrap;
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      /* Ensure footer stays at the bottom of the page */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      main {
+        flex: 1 0 auto;
+      }
+      footer {
+        flex-shrink: 0;
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+        background: #1A237E !important;
+        color: #e3f2fd !important;
+        position: relative;
+        bottom: 0;
+      }
       /* Main menu links: allow pointer events for hover on desktop, block clicks */
       .nav-links > li > a {
         pointer-events: none;
@@ -369,7 +407,7 @@
 <body>
     <div class="top-banner" style="width:100%;background:#F0F4F8;border-bottom:1px solid #E0E0E0;padding:0.2rem 0;position:sticky;top:0;z-index:1100;">
       <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:flex-end;align-items:center;">
-        <ul style="display:flex;gap:1.2rem;list-style:none;margin:0;padding:0;justify-content:flex-end;align-items:center;width:100%;background:transparent;">
+        <ul style="display:flex;gap:1.2rem;list-style:none;margin:0;padding:0;justify-content:flex-end;align-items:center;width:100%;background:transparent;align-items:flex-start;">
           <li><a href="#" style="color:#1A237E;font-weight:500;text-decoration:none;font-size:0.97rem;">Careers</a></li>
           <li><a href="#" style="color:#1A237E;font-weight:500;text-decoration:none;font-size:0.97rem;">News &amp; Events</a></li>
           <li><a href="#" style="color:#1A237E;font-weight:500;text-decoration:none;font-size:0.97rem;">Blog</a></li>
@@ -379,7 +417,7 @@
     </div>
     <header style="position:sticky;top:2.2rem;z-index:1099;box-shadow:0 2px 8px rgba(0,0,0,0.03);">
         <nav style="display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;min-height:56px;">
-            <div class="logo" style="font-size:1.25rem;font-weight:bold;letter-spacing:0.5px;">Quenti Solutions</div>
+            <a href="index.html" class="logo" style="font-size:1.25rem;font-weight:bold;letter-spacing:0.5px;text-decoration:none;color:inherit;">Quenti Solutions</a>
             <ul class="nav-links" style="display:flex;gap:2rem;list-style:none;margin:0;padding:0;justify-content:flex-end;align-items:center;position:relative;">
                 <li class="nav-item" style="position:relative;">
                   <a href="services.html" style="font-size:1rem;letter-spacing:0.5px;text-transform:uppercase;display:flex;align-items:center;gap:0.3em;" tabindex="0">SERVICES <span style="font-size:0.9em;">&#9662;</span></a>
@@ -423,7 +461,7 @@
                   </ul>
                 </li>
     <script>
-    // Dropdown menu logic for nav: JS only for mobile (<=900px), desktop is pure CSS hover
+    // Dropdown menu logic for nav: JS only for mobile (<=900px), desktop hover improved to keep dropdown open until mouse leaves nav
     document.addEventListener('DOMContentLoaded', function() {
       function isMobile() {
         return window.innerWidth <= 900;
@@ -476,39 +514,39 @@
         resetDropdowns();
         setupMobileDropdowns();
       });
-      // No JS for desktop: hover/focus handled by CSS only
+
+      // Desktop hover logic: keep dropdown open until mouse leaves nav area
+      if (!isMobile()) {
+        var nav = document.querySelector('nav');
+        var dropdowns = document.querySelectorAll('.nav-links .dropdown');
+        var navLinks = document.querySelectorAll('.nav-links > li');
+        navLinks.forEach(function(item) {
+          item.addEventListener('mouseenter', function() {
+            dropdowns.forEach(function(dd) { dd.style.display = 'none'; });
+            var dd = item.querySelector('.dropdown');
+            if (dd) dd.style.display = 'block';
+          });
+        });
+        nav.addEventListener('mouseleave', function() {
+          dropdowns.forEach(function(dd) { dd.style.display = 'none'; });
+        });
+        // Keep dropdown open if mouse moves between menu and dropdown
+        dropdowns.forEach(function(dd) {
+          dd.addEventListener('mouseenter', function() {
+            dd.style.display = 'block';
+          });
+          dd.addEventListener('mouseleave', function() {
+            dd.style.display = 'none';
+          });
+        });
+      }
     });
     </script>
             </ul>
         </nav>
     </header>
     <main>
-        <div class="homepage-flex">
-          <section class="hero-half">
-            <h1>Empowering Your Business with IT & ITES Solutions</h1>
-            <p>Delivering innovative technology and business process services for a digital world.</p>
-            <a href="services.html" class="cta-btn">Our Services</a>
-          </section>
-          <section class="services-half">
-            <div class="services-showcase">
-              <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="AI/ML">
-                <h2>AI &amp; Machine Learning</h2>
-                <p>Unlock business value with Artificial Intelligence, Machine Learning, and Data Intelligence solutions tailored to your needs.</p>
-              </div>
-              <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80" alt="Cloud">
-                <h2>Cloud Solutions</h2>
-                <p>Scalable, secure, and cost-effective cloud services to accelerate your digital transformation journey.</p>
-              </div>
-              <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&q=80" alt="Cybersecurity">
-                <h2>Cybersecurity</h2>
-                <p>Protect your business with advanced cybersecurity solutions and proactive threat management.</p>
-              </div>
-            </div>
-          </section>
-        </div>
+        <!-- Services section removed as requested -->
     </main>
     <footer>
         <p>&copy; 2025 Quenti Solutions. All rights reserved.</p>

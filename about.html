@@ -101,7 +101,12 @@
           <p>&copy; 2025 Quenti Solutions. All rights reserved.</p>
         </footer>
       `;
-      document.body.insertAdjacentHTML('afterbegin', headerHTML + mainHTML);
+      var topBanner = document.querySelector('.top-banner');
+      if (topBanner) {
+        topBanner.insertAdjacentHTML('afterend', headerHTML + mainHTML);
+      } else {
+        document.body.insertAdjacentHTML('afterbegin', headerHTML + mainHTML);
+      }
       document.body.insertAdjacentHTML('beforeend', footerHTML);
       // Cookie banner and modal (same as before)
       var cookieBannerHTML = `

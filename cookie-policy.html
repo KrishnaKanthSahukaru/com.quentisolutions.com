@@ -6,6 +6,50 @@
     <title>Cookie Policy - Quenti Solutions</title>
     <link rel="stylesheet" href="css/styles.css">
     <style>
+      /* Responsive styles for cookie modal */
+      @media (max-width: 600px) {
+        #cookie-modal > div {
+          max-width: 98vw !important;
+          width: 98vw !important;
+          padding: 1.2rem 0.5rem 1rem 0.5rem !important;
+        }
+        #cookie-modal h2 {
+          font-size: 1.1rem !important;
+        }
+        #cookie-modal p, #cookie-modal .cookie-desc {
+          font-size: 0.97rem !important;
+        }
+        #cookie-modal .cookie-row label {
+          font-size: 0.97rem !important;
+        }
+        #cookie-modal .cookie-row {
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          gap: 0.3rem !important;
+        }
+        #cookie-modal .cookie-desc {
+          margin-left: 0.5rem !important;
+        }
+        #cookie-modal #cookie-save-accept {
+          width: 100% !important;
+          font-size: 1rem !important;
+          padding: 0.7rem 0 !important;
+        }
+        #cookie-modal-close {
+          top: 6px !important;
+          right: 8px !important;
+        }
+      }
+      @media (max-width: 400px) {
+        #cookie-modal > div {
+          padding: 0.7rem 0.2rem 0.7rem 0.2rem !important;
+        }
+        #cookie-modal h2 {
+          font-size: 1rem !important;
+        }
+      }
+    </style>
+    <style>
       body {
         background: #F7FAFC !important;
         color: #222;
@@ -68,19 +112,19 @@
     </style>
 </head>
 <body>
-    <div class="top-banner" style="width:100%;background:#fff;border-bottom:1px solid #E0E0E0;padding:0.3rem 0;">
+    <div class="top-banner" style="width:100%;background:#fff;border-bottom:1px solid #E0E0E0;padding:0.3rem 0;position:sticky;top:0;z-index:1100;">
       <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:flex-end;align-items:center;">
-        <nav style="display:flex;gap:1.5rem;">
-          <a href="#" style="color:#1A237E;font-weight:500;text-decoration:none;">Careers</a>
-          <a href="#" style="color:#1A237E;font-weight:500;text-decoration:none;">News &amp; Events</a>
-          <a href="#" style="color:#1A237E;font-weight:500;text-decoration:none;">Blog</a>
-          <a href="contact.html" style="color:#1A237E;font-weight:500;text-decoration:none;">Contact Us</a>
-        </nav>
+        <ul style="display:flex;gap:1.5rem;list-style:none;margin:0;padding:0;justify-content:flex-end;align-items:center;width:100%;background:transparent;">
+          <li style="margin-left:auto;"><a href="#" style="color:#1A237E;font-weight:500;text-decoration:none;">Careers</a></li>
+          <li><a href="#" style="color:#1A237E;font-weight:500;text-decoration:none;">News &amp; Events</a></li>
+          <li><a href="#" style="color:#1A237E;font-weight:500;text-decoration:none;">Blog</a></li>
+          <li><a href="contact.html" style="color:#1A237E;font-weight:500;text-decoration:none;">Contact Us</a></li>
+        </ul>
       </div>
     </div>
     <header>
         <nav style="display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;">
-            <div class="logo">Quenti Solutions</div>
+            <a href="index.html" class="logo" style="font-size:1.25rem;font-weight:bold;letter-spacing:0.5px;text-decoration:none;color:inherit;">Quenti Solutions</a>
             <ul class="nav-links" style="display:flex;gap:2rem;list-style:none;margin:0;padding:0;justify-content:flex-end;align-items:center;width:100%;">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
@@ -92,7 +136,7 @@
     </header>
     <main>
         <section class="page-header">
-            <h1>Cookie Policy</h1>
+            <h1>Cookies Policy</h1>
         </section>
         <section class="about-content">
             <h2>1. Purpose</h2>
@@ -172,9 +216,9 @@ document.addEventListener('DOMContentLoaded', function() {
     <div id="cookie-modal" style="display:none;position:fixed;z-index:2000;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,0.4);justify-content:center;align-items:center;">
       <div style="background:#fff;color:#222;max-width:420px;width:90vw;padding:2rem 1.5rem 1.5rem 1.5rem;border-radius:8px;box-shadow:0 4px 24px rgba(0,0,0,0.18);position:relative;">
         <button id="cookie-modal-close" style="position:absolute;top:10px;right:14px;background:none;border:none;font-size:1.7rem;color:#222;cursor:pointer;">&times;</button>
-        <h2 style="margin-top:0;">Privacy Overview</h2>
+        <h2 style="margin-top:0;">Privacy Preference Center</h2>
         <p id="cookie-modal-text" style="font-size:1rem;line-height:1.6;">
-          This website uses cookies to improve your experience while you navigate through the website. Out of these, the cookies that are categorized as necessary are stored on your browser as they are essential for the working of basic functionalities of the website. We also use third-party cookies that help us analyze and understand how you use this website. These cookies will be stored in your browser only with your consent. You also have the option to opt-out of these cookies. But opting out of some of these cookies may affect your browsing experience.
+          When you visit any web site, it may store or retrieve information on your browser, mostly in the form of cookies. This information might be about you, your preferences or your device and is mostly used to make the site work as you expect it to. The information does not usually directly identify you, but it can give you a more personalised web experience. Because we respect your right to privacy, you can choose not to allow some types of cookies. Click on the different category headings to find out more and change our default settings. However, blocking some types of cookies may impact your experience of the site and the services we are able to offer.
         </p>
         <button id="cookie-modal-showmore" style="background:#ffb300;color:#222;border:none;padding:0.4rem 1.1rem;border-radius:3px;font-weight:bold;cursor:pointer;display:inline-block;margin-top:0.5rem;">Show More</button>
         <div style="margin-top:1.5rem;padding:1rem;background:#f5f5f5;border-radius:6px;display:flex;flex-direction:column;gap:1rem;flex-wrap:wrap;">
@@ -306,7 +350,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Cookie Modal Show More logic
     var cookieModalText = document.getElementById('cookie-modal-text');
     var cookieModalShowMore = document.getElementById('cookie-modal-showmore');
-    var fullText = "This website uses cookies to improve your experience while you navigate through the website. Out of these, the cookies that are categorized as necessary are stored on your browser as they are essential for the working of basic functionalities of the website. We also use third-party cookies that help us analyze and understand how you use this website. These cookies will be stored in your browser only with your consent. You also have the option to opt-out of these cookies. But opting out of some of these cookies may affect your browsing experience.";
+    var fullText = "When you visit any web site, it may store or retrieve information on your browser, mostly in the form of cookies. This information might be about you, your preferences or your device and is mostly used to make the site work as you expect it to. The information does not usually directly identify you, but it can give you a more personalised web experience. Because we respect your right to privacy, you can choose not to allow some types of cookies. Click on the different category headings to find out more and change our default settings. However, blocking some types of cookies may impact your experience of the site and the services we are able to offer.";
     var shortText = fullText.slice(0, 258) + (fullText.length > 258 ? '...' : '');
     if(cookieModalText && cookieModalShowMore) {
         cookieModalText.textContent = shortText;

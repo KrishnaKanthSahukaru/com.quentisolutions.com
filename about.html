@@ -5,312 +5,175 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Quenti Solutions</title>
     <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <div class="top-banner" style="width:100%;background:#F0F4F8;border-bottom:1px solid #E0E0E0;padding:0.2rem 0;position:sticky;top:0;z-index:1100;">
-      <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:flex-end;align-items:center;">
-        <ul style="display:flex;gap:1.2rem;list-style:none;margin:0;padding:0;justify-content:flex-end;align-items:center;width:100%;background:transparent;">
-          <li style="margin-left:auto;"><a href="#" style="color:#1A237E;font-weight:500;text-decoration:none;font-size:0.97rem;">Careers</a></li>
-          <li><a href="#" style="color:#1A237E;font-weight:500;text-decoration:none;font-size:0.97rem;">News &amp; Events</a></li>
-          <li><a href="#" style="color:#1A237E;font-weight:500;text-decoration:none;font-size:0.97rem;">Blog</a></li>
-          <li><a href="contact.html" style="color:#1A237E;font-weight:500;text-decoration:none;font-size:0.97rem;">Contact Us</a></li>
-        </ul>
-      </div>
-    </div>
-    <script src="js/main.js"></script>
-    <script>
-    // Inject all page elements dynamically
-    document.addEventListener('DOMContentLoaded', function() {
-      // Header
-      var headerHTML = `
-        <header>
-          <nav>
-            <a href="index.html" class="logo" style="font-size:1.25rem;font-weight:bold;letter-spacing:0.5px;white-space:nowrap;display:inline-block;overflow:hidden;text-overflow:ellipsis;text-decoration:none;color:inherit;">Quenti Solutions</a>
-            <ul class="nav-links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-          </nav>
-        </header>
-      `;
-      // Main
-      var mainHTML = `
-        <main>
-          <section class="page-header">
-            <h1>About Us</h1>
-            <p>Learn more about Quenti Solutions and our mission.</p>
-          </section>
-          <section class="about-content">
-            <h2>Who We Are</h2>
-            <p>Quenti Solutions is a leading provider of IT and ITES services, helping businesses leverage technology for growth and efficiency. Our team of experts brings years of experience in delivering innovative solutions tailored to client needs.</p>
-            <h2>Our Mission</h2>
-            <p>To empower organizations with cutting-edge technology and business process services, driving digital transformation and operational excellence.</p>
-            <h2>Why Choose Us?</h2>
-            <ul>
-              <li>Experienced professionals</li>
-              <li>Client-centric approach</li>
-              <li>Proven track record</li>
-              <li>Comprehensive service portfolio</li>
-            </ul>
-          </section>
-        </main>
-    <footer style="background:#1A237E;color:#fff;padding:2.2rem 2rem 1.2rem 2rem;">
-      <div style="max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:2.5rem;justify-content:space-between;">
-        <div style="min-width:220px;flex:1;">
-          <h3 style="color:#fff;margin-bottom:1rem;">SERVICES</h3>
-          <ul style="list-style:none;padding:0;margin:0;">
-            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">Digitization</a></li>
-            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">Software Development</a></li>
-            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">Quality Assurance</a></li>
-            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">Cloud Enablement</a></li>
-            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">Automation</a></li>
-            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">CRM</a></li>
-            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">ERP</a></li>
-            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">AI/ML, Analytics, &amp; Data Engineering</a></li>
-          </ul>
-        </div>
-        <div style="min-width:220px;flex:1;">
-          <h3 style="color:#fff;margin-bottom:1rem;">INDUSTRIES</h3>
-          <ul style="list-style:none;padding:0;margin:0;">
-            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">Banking</a></li>
-            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">Healthcare</a></li>
-            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">Technology</a></li>
-            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">Consulting</a></li>
-          </ul>
-        </div>
-        <div style="min-width:220px;flex:1;">
-          <h3 style="color:#fff;margin-bottom:1rem;">INSIGHTS</h3>
-          <ul style="list-style:none;padding:0;margin:0;">
-            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">Whitepapers</a></li>
-            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">Case Studies</a></li>
-            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">Blog</a></li>
-            <li><a href="#" style="color:#e3f2fd;text-decoration:none;">News &amp; Events</a></li>
-          </ul>
-        </div>
-      </div>
-      <div style="text-align:center;margin-top:2.5rem;font-size:1rem;color:#e3f2fd;">
-        &copy; 2025 Quenti Solutions. All rights reserved.
-      </div>
-    </footer>
-      `;
-      // Footer
-      var footerHTML = `
-        <footer>
-          <p>&copy; 2025 Quenti Solutions. All rights reserved.</p>
-        </footer>
-      `;
-      var topBanner = document.querySelector('.top-banner');
-      if (topBanner) {
-        topBanner.insertAdjacentHTML('afterend', headerHTML + mainHTML);
-      } else {
-        document.body.insertAdjacentHTML('afterbegin', headerHTML + mainHTML);
-      }
-      document.body.insertAdjacentHTML('beforeend', footerHTML);
-      // Cookie banner and modal (same as before)
-      var cookieBannerHTML = `
-        <div id="cookie-banner" style="position:fixed;bottom:0;left:0;width:100%;background:#222;color:#fff;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;z-index:1000;flex-wrap:wrap;gap:1rem;">
-          <span style="flex:1 1 300px;min-width:100px;font-size:small">We use cookies on our website to give you the most relevant experience by remembering your preferences and repeat visits. By clicking “Accept All”, you consent to the use of ALL the cookies. However, you may visit <b>Cookie Settings</b> to provide a controlled consent. <a href="cookie-policy.html" style="color:#ffb300;text-decoration:underline;">Cookie Policy</a></span>
-          <div style="display:flex;gap:0.5rem;align-items:center;">
-            <button id="cookie-accept" style="background:#ffb300;color:#222;border:none;padding:0.5rem 1.2rem;border-radius:3px;font-weight:bold;cursor:pointer;">Accept All</button>
-            <button id="cookie-settings" style="background:#fff;color:#222;border:none;padding:0.5rem 1.2rem;border-radius:3px;font-weight:bold;cursor:pointer;">Cookie Settings</button>
-            <button id="cookie-close" style="background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;line-height:1;">&times;</button>
-          </div>
-        </div>
-        <div id="cookie-modal" style="display:none;position:fixed;z-index:2000;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,0.4);justify-content:center;align-items:center;">
-          <div style="background:#fff;color:#222;max-width:420px;width:90vw;padding:2rem 1.5rem 1.5rem 1.5rem;border-radius:8px;box-shadow:0 4px 24px rgba(0,0,0,0.18);position:relative;">
-            <button id="cookie-modal-close" style="position:absolute;top:10px;right:14px;background:none;border:none;font-size:1.7rem;color:#222;cursor:pointer;">&times;</button>
-            <h2 style="margin-top:0;">Privacy Overview</h2>
-            <p id="cookie-modal-text" style="font-size:1rem;line-height:1.6;">
-              This website uses cookies to improve your experience while you navigate through the website. Out of these, the cookies that are categorized as necessary are stored on your browser as they are essential for the working of basic functionalities of the website. We also use third-party cookies that help us analyze and understand how you use this website. These cookies will be stored in your browser only with your consent. You also have the option to opt-out of these cookies. But opting out of some of these cookies may affect your browsing experience.
-            </p>
-            <button id="cookie-modal-showmore" style="background:#ffb300;color:#222;border:none;padding:0.4rem 1.1rem;border-radius:3px;font-weight:bold;cursor:pointer;display:inline-block;margin-top:0.5rem;">Show More</button>
-            <div style="margin-top:1.5rem;padding:1rem;background:#f5f5f5;border-radius:6px;display:flex;flex-direction:column;gap:1rem;flex-wrap:wrap;">
-              <div class="cookie-row" style="display:flex;align-items:center;gap:0.7rem;flex-wrap:wrap;">
-                <button class="cookie-expand" aria-label="Expand" style="background:none;border:none;font-size:1.2rem;cursor:pointer;line-height:1;">&#9654;</button>
-                <label style="display:flex;align-items:center;gap:0.7rem;font-weight:500;min-width:120px;margin-bottom:0;">
-                  Essential Cookies
-                  <input type="checkbox" checked disabled style="accent-color:#1a237e;width:1.3em;height:1.3em;">
-                </label>
-              </div>
-              <div class="cookie-desc" style="display:none;font-size:0.97rem;color:#444;margin-left:2.2rem;">These cookies are necessary for the website to function and cannot be switched off in our systems.</div>
-              <div class="cookie-row" style="display:flex;align-items:center;gap:0.7rem;flex-wrap:wrap;">
-                <button class="cookie-expand" aria-label="Expand" style="background:none;border:none;font-size:1.2rem;cursor:pointer;line-height:1;">&#9654;</button>
-                <label style="display:flex;align-items:center;gap:0.7rem;font-weight:500;min-width:120px;margin-bottom:0;">
-                  Functional Cookies
-                  <span class="cookie-switch" style="position:relative;display:inline-block;width:40px;height:22px;">
-                    <input type="checkbox" id="functional-toggle" style="opacity:0;width:40px;height:22px;cursor:pointer;z-index:2;position:absolute;top:0;left:0;margin:0;">
-                    <span class="cookie-bg" style="position:absolute;top:0;left:0;right:0;bottom:0;background-color:#ccc;border-radius:22px;transition:.4s;"></span>
-                    <span class="cookie-knob" style="position:absolute;left:3px;top:3px;width:16px;height:16px;background:#fff;border-radius:50%;transition:.4s;"></span>
-                  </span>
-                </label>
-              </div>
-              <div class="cookie-desc" style="display:none;font-size:0.97rem;color:#444;margin-left:2.2rem;">These cookies enable enhanced functionality and personalization, such as videos and live chats.</div>
-              <div class="cookie-row" style="display:flex;align-items:center;gap:0.7rem;flex-wrap:wrap;">
-                <button class="cookie-expand" aria-label="Expand" style="background:none;border:none;font-size:1.2rem;cursor:pointer;line-height:1;">&#9654;</button>
-                <label style="display:flex;align-items:center;gap:0.7rem;font-weight:500;min-width:120px;margin-bottom:0;">
-                  Analytics Cookies
-                  <span class="cookie-switch" style="position:relative;display:inline-block;width:40px;height:22px;">
-                    <input type="checkbox" id="analytics-toggle" style="opacity:0;width:40px;height:22px;cursor:pointer;z-index:2;position:absolute;top:0;left:0;margin:0;">
-                    <span class="cookie-bg" style="position:absolute;top:0;left:0;right:0;bottom:0;background-color:#ccc;border-radius:22px;transition:.4s;"></span>
-                    <span class="cookie-knob" style="position:absolute;left:3px;top:3px;width:16px;height:16px;background:#fff;border-radius:50%;transition:.4s;"></span>
-                  </span>
-                </label>
-              </div>
-              <div class="cookie-desc" style="display:none;font-size:0.97rem;color:#444;margin-left:2.2rem;">These cookies help us understand how visitors interact with our website, discover errors, and provide better overall analytics.</div>
-              <div class="cookie-row" style="display:flex;align-items:center;gap:0.7rem;flex-wrap:wrap;">
-                <button class="cookie-expand" aria-label="Expand" style="background:none;border:none;font-size:1.2rem;cursor:pointer;line-height:1;">&#9654;</button>
-                <label style="display:flex;align-items:center;gap:0.7rem;font-weight:500;min-width:120px;margin-bottom:0;">
-                  Performance Cookies
-                  <span class="cookie-switch" style="position:relative;display:inline-block;width:40px;height:22px;">
-                    <input type="checkbox" id="performance-toggle" style="opacity:0;width:40px;height:22px;cursor:pointer;z-index:2;position:absolute;top:0;left:0;margin:0;">
-                    <span class="cookie-bg" style="position:absolute;top:0;left:0;right:0;bottom:0;background-color:#ccc;border-radius:22px;transition:.4s;"></span>
-                    <span class="cookie-knob" style="position:absolute;left:3px;top:3px;width:16px;height:16px;background:#fff;border-radius:50%;transition:.4s;"></span>
-                  </span>
-                </label>
-              </div>
-              <div class="cookie-desc" style="display:none;font-size:0.97rem;color:#444;margin-left:2.2rem;">These cookies are used to enhance the performance and functionality of our website but are non-essential to their use.</div>
-              <div class="cookie-row" style="display:flex;align-items:center;gap:0.7rem;flex-wrap:wrap;">
-                <button class="cookie-expand" aria-label="Expand" style="background:none;border:none;font-size:1.2rem;cursor:pointer;line-height:1;">&#9654;</button>
-                <label style="display:flex;align-items:center;gap:0.7rem;font-weight:500;min-width:120px;margin-bottom:0;">
-                  Advertisement Cookies
-                  <span class="cookie-switch" style="position:relative;display:inline-block;width:40px;height:22px;">
-                    <input type="checkbox" id="advertisement-toggle" style="opacity:0;width:40px;height:22px;cursor:pointer;z-index:2;position:absolute;top:0;left:0;margin:0;">
-                    <span class="cookie-bg" style="position:absolute;top:0;left:0;right:0;bottom:0;background-color:#ccc;border-radius:22px;transition:.4s;"></span>
-                    <span class="cookie-knob" style="position:absolute;left:3px;top:3px;width:16px;height:16px;background:#fff;border-radius:50%;transition:.4s;"></span>
-                  </span>
-                </label>
-              </div>
-              <div class="cookie-desc" style="display:none;font-size:0.97rem;color:#444;margin-left:2.2rem;">These cookies are used to deliver advertisements that are relevant to you and your interests.</div>
-              <div class="cookie-row" style="display:flex;align-items:center;gap:0.7rem;flex-wrap:wrap;">
-                <button class="cookie-expand" aria-label="Expand" style="background:none;border:none;font-size:1.2rem;cursor:pointer;line-height:1;">&#9654;</button>
-                <label style="display:flex;align-items:center;gap:0.7rem;font-weight:500;min-width:120px;margin-bottom:0;">
-                  Social Networking Cookies
-                  <span class="cookie-switch" style="position:relative;display:inline-block;width:40px;height:22px;">
-                    <input type="checkbox" id="social-toggle" style="opacity:0;width:40px;height:22px;cursor:pointer;z-index:2;position:absolute;top:0;left:0;margin:0;">
-                    <span class="cookie-bg" style="position:absolute;top:0;left:0;right:0;bottom:0;background-color:#ccc;border-radius:22px;transition:.4s;"></span>
-                    <span class="cookie-knob" style="position:absolute;left:3px;top:3px;width:16px;height:16px;background:#fff;border-radius:50%;transition:.4s;"></span>
-                  </span>
-                </label>
-              </div>
-              <div class="cookie-desc" style="display:none;font-size:0.97rem;color:#444;margin-left:2.2rem;">These cookies are set by social media services to enable you to share our content with your friends and networks.</div>
-              <div class="cookie-row" style="display:flex;align-items:center;gap:0.7rem;flex-wrap:wrap;">
-                <button class="cookie-expand" aria-label="Expand" style="background:none;border:none;font-size:1.2rem;cursor:pointer;line-height:1;">&#9654;</button>
-                <label style="display:flex;align-items:center;gap:0.7rem;font-weight:500;min-width:120px;margin-bottom:0;">
-                  Unclassified Cookies
-                  <span class="cookie-switch" style="position:relative;display:inline-block;width:40px;height:22px;">
-                    <input type="checkbox" id="unclassified-toggle" style="opacity:0;width:40px;height:22px;cursor:pointer;z-index:2;position:absolute;top:0;left:0;margin:0;">
-                    <span class="cookie-bg" style="position:absolute;top:0;left:0;right:0;bottom:0;background-color:#ccc;border-radius:22px;transition:.4s;"></span>
-                    <span class="cookie-knob" style="position:absolute;left:3px;top:3px;width:16px;height:16px;background:#fff;border-radius:50%;transition:.4s;"></span>
-                  </span>
-                </label>
-              </div>
-              <div class="cookie-desc" style="display:none;font-size:0.97rem;color:#444;margin-left:2.2rem;">These are cookies that have not yet been categorized.</div>
-            </div>
-            <button id="cookie-save-accept" style="margin:2rem auto 0 auto;display:block;background:#1a237e;color:#fff;border:none;padding:0.8rem 2.2rem;border-radius:3px;font-size:1.1rem;font-weight:bold;cursor:pointer;">Save & Accept</button>
-          </div>
-        </div>
-      `;
-      var tempDiv = document.createElement('div');
-      tempDiv.innerHTML = cookieBannerHTML;
-      document.body.appendChild(tempDiv);
-    });
-    // Cookie banner handlers (same as before)
-    document.addEventListener('DOMContentLoaded', function() {
-        var cookieBanner = document.getElementById('cookie-banner');
-        var cookieClose = document.getElementById('cookie-close');
-        var cookieAccept = document.getElementById('cookie-accept');
-        var cookieSettings = document.getElementById('cookie-settings');
-        if(cookieBanner && cookieClose) {
-            cookieClose.addEventListener('click', function() {
-                cookieBanner.style.display = 'none';
-            });
-        }
-        if(cookieBanner && cookieAccept) {
-            cookieAccept.addEventListener('click', function() {
-                cookieBanner.style.display = 'none';
-                // Here you can set a cookie or localStorage to remember consent
-            });
-        }
-        if(cookieBanner && cookieSettings) {
-            cookieSettings.addEventListener('click', function() {
-                var modal = document.getElementById('cookie-modal');
-                if(modal) modal.style.display = 'flex';
-            });
-        }
-        var cookieModal = document.getElementById('cookie-modal');
-        var cookieModalClose = document.getElementById('cookie-modal-close');
-        if(cookieModal && cookieModalClose) {
-            cookieModalClose.addEventListener('click', function() {
-                cookieModal.style.display = 'none';
-            });
-            // Optional: close modal when clicking outside the modal content
-            cookieModal.addEventListener('click', function(e) {
-                if(e.target === cookieModal) cookieModal.style.display = 'none';
-            });
-        }
-        // Cookie Modal Show More logic
-        var cookieModalText = document.getElementById('cookie-modal-text');
-        var cookieModalShowMore = document.getElementById('cookie-modal-showmore');
-        var fullText = "This website uses cookies to improve your experience while you navigate through the website. Out of these, the cookies that are categorized as necessary are stored on your browser as they are essential for the working of basic functionalities of the website. We also use third-party cookies that help us analyze and understand how you use this website. These cookies will be stored in your browser only with your consent. You also have the option to opt-out of these cookies. But opting out of some of these cookies may affect your browsing experience.";
-        var shortText = fullText.slice(0, 258) + (fullText.length > 258 ? '...' : '');
-        if(cookieModalText && cookieModalShowMore) {
-            cookieModalText.textContent = shortText;
-            cookieModalShowMore.style.display = fullText.length > 258 ? 'inline-block' : 'none';
-            cookieModalShowMore.addEventListener('click', function() {
-                cookieModalText.textContent = fullText;
-                cookieModalShowMore.style.display = 'none';
-            });
-        }
-        // Cookie toggles switch logic (all except essential)
-        var cookieSwitches = document.querySelectorAll('.cookie-switch');
-        cookieSwitches.forEach(function(switchEl) {
-            var input = switchEl.querySelector('input[type="checkbox"]');
-            var bg = switchEl.querySelector('.cookie-bg');
-            var knob = switchEl.querySelector('.cookie-knob');
-            function updateSwitch() {
-                if (input.checked) {
-                    bg.style.backgroundColor = '#1a237e';
-                    knob.style.left = '21px';
-                } else {
-                    bg.style.backgroundColor = '#ccc';
-                    knob.style.left = '3px';
-                }
+    <link rel="icon" type="image/png" href="images/assets/logo.png">
+    <style>
+      /* Ensure Quenti Solutions is single line everywhere */
+      .logo, .cookie-logo {
+        white-space: nowrap !important;
+        display: inline-block !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
             }
-            input.addEventListener('change', updateSwitch);
-            updateSwitch();
-        });
-        // Expand/collapse logic for cookie descriptions
-        var expandBtns = document.querySelectorAll('.cookie-expand');
-        var descs = document.querySelectorAll('.cookie-desc');
-        expandBtns.forEach(function(btn, idx) {
-            btn.addEventListener('click', function() {
-                var desc = descs[idx];
-                var expanded = desc.style.display === 'block';
-                desc.style.display = expanded ? 'none' : 'block';
-                btn.innerHTML = expanded ? '&#9654;' : '&#9660;';
-            });
-        });
-        // Save & Accept button handler
-        var saveAcceptBtn = document.getElementById('cookie-save-accept');
-        if (saveAcceptBtn) {
-            saveAcceptBtn.addEventListener('click', function() {
-                var settings = {
-                    functional: document.getElementById('functional-toggle').checked,
-                    analytics: document.getElementById('analytics-toggle').checked,
-                    performance: document.getElementById('performance-toggle').checked,
-                    advertisement: document.getElementById('advertisement-toggle').checked,
-                    social: document.getElementById('social-toggle').checked,
-                    unclassified: document.getElementById('unclassified-toggle').checked
-                };
-                // You can store settings in localStorage or send to server here
-                var cookieModal = document.getElementById('cookie-modal');
-                if(cookieModal) cookieModal.style.display = 'none';
-                // Optionally, hide the banner as well
-                var cookieBanner = document.getElementById('cookie-banner');
-                if(cookieBanner) cookieBanner.style.display = 'none';
-            });
-        }
-    });
-    </script>
+            /* Ensure footer stays at the bottom */
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+            }
+            main {
+                flex: 1 0 auto;
+            }
+            footer {
+                flex-shrink: 0;
+                width: 100%;
+                text-align: center;
+                padding: 1rem 0;
+                background: #1A237E !important;
+                color: #e3f2fd !important;
+                position: relative;
+                bottom: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="top-banner" style="width:100%;background:#F0F4F8;border-bottom:1px solid #E0E0E0;padding:0.2rem 0;position:sticky;top:0;z-index:1100;">
+            <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:flex-end;align-items:center;">
+                <ul style="display:flex;gap:1.2rem;list-style:none;margin:0;padding:0;justify-content:flex-end;align-items:center;width:100%;background:transparent;">
+                    <li><a href="#" style="color:#1A237E;font-weight:500;text-decoration:none;font-size:0.97rem;">Careers</a></li>
+                    <li><a href="#" style="color:#1A237E;font-weight:500;text-decoration:none;font-size:0.97rem;">News & Events</a></li>
+                    <li><a href="#" style="color:#1A237E;font-weight:500;text-decoration:none;font-size:0.97rem;">Blog</a></li>
+                    <li><a href="contact.html" style="color:#1A237E;font-weight:500;text-decoration:none;font-size:0.97rem;">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <header style="position:sticky;top:2.2rem;z-index:1099;box-shadow:0 2px 8px rgba(0,0,0,0.03);">
+            <nav style="display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;min-height:56px;">
+                <a href="index.html" class="logo" style="font-size:1.25rem;font-weight:bold;letter-spacing:0.5px;text-decoration:none;color:inherit;">Quenti Solutions</a>
+                <ul class="nav-links" style="display:flex;gap:2rem;list-style:none;margin:0;padding:0;justify-content:flex-end;align-items:center;position:relative;">
+                    <li class="nav-item" style="position:relative;">
+                        <a href="services.html" style="font-size:1rem;letter-spacing:0.5px;text-transform:uppercase;display:flex;align-items:center;gap:0.3em;" tabindex="0">SERVICES <span style="font-size:0.9em;">&#9662;</span></a>
+                        <ul class="dropdown" style="display:none;position:absolute;top:2.2em;right:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);border-radius:4px;min-width:180px;padding:0.5em 0;z-index:1200;list-style:none;">
+                            <li><a href="artificial-intelligence.html" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">AI/ML</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" style="position:relative;">
+                        <span style="font-size:1rem;letter-spacing:0.5px;text-transform:uppercase;display:flex;align-items:center;gap:0.3em;" tabindex="0">INDUSTRIES <span style="font-size:0.9em;">&#9662;</span></span>
+                        <ul class="dropdown" style="display:none;position:absolute;top:2.2em;right:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);border-radius:4px;min-width:160px;padding:0.5em 0;z-index:1200;list-style:none;">
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Banking</a></li>
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Healthcare</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" style="position:relative;">
+                        <span style="font-size:1rem;letter-spacing:0.5px;text-transform:uppercase;display:flex;align-items:center;gap:0.3em;" tabindex="0">INSIGHTS <span style="font-size:0.9em;">&#9662;</span></span>
+                        <ul class="dropdown" style="display:none;position:absolute;top:2.2em;right:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);border-radius:4px;min-width:160px;padding:0.5em 0;z-index:1200;list-style:none;">
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Whitepapers</a></li>
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Case Studies</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" style="position:relative;">
+                        <span style="font-size:1rem;letter-spacing:0.5px;text-transform:uppercase;display:flex;align-items:center;gap:0.3em;" tabindex="0">PARTNERS <span style="font-size:0.9em;">&#9662;</span></span>
+                        <ul class="dropdown" style="display:none;position:absolute;top:2.2em;right:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);border-radius:4px;min-width:160px;padding:0.5em 0;z-index:1200;list-style:none;">
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Technology</a></li>
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Consulting</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" style="position:relative;">
+                        <span style="font-size:1rem;letter-spacing:0.5px;text-transform:uppercase;display:flex;align-items:center;gap:0.3em;" tabindex="0">SOLUTIONS <span style="font-size:0.9em;">&#9662;</span></span>
+                        <ul class="dropdown" style="display:none;position:absolute;top:2.2em;right:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);border-radius:4px;min-width:160px;padding:0.5em 0;z-index:1200;list-style:none;">
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">ERP</a></li>
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">CRM</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" style="position:relative;">
+                        <span style="font-size:1rem;letter-spacing:0.5px;text-transform:uppercase;display:flex;align-items:center;gap:0.3em;" tabindex="0">SOLUTIONS <span style="font-size:0.9em;">&#9662;</span></span>
+                        <ul class="dropdown" style="display:none;position:absolute;top:2.2em;right:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);border-radius:4px;min-width:160px;padding:0.5em 0;z-index:1200;list-style:none;">
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">ERP</a></li>
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">CRM</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" style="position:relative;">
+                        <span style="font-size:1rem;letter-spacing:0.5px;text-transform:uppercase;display:flex;align-items:center;gap:0.3em;" tabindex="0">ABOUT US <span style="font-size:0.9em;">&#9662;</span></span>
+                        <ul class="dropdown" style="display:none;position:absolute;top:2.2em;right:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);border-radius:4px;min-width:160px;padding:0.5em 0;z-index:1200;list-style:none;">
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Our Story</a></li>
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Leadership</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" style="position:relative;">
+                        <span style="font-size:1rem;letter-spacing:0.5px;text-transform:uppercase;display:flex;align-items:center;gap:0.3em;" tabindex="0">ABOUT US <span style="font-size:0.9em;">&#9662;</span></span>
+                        <ul class="dropdown" style="display:none;position:absolute;top:2.2em;right:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);border-radius:4px;min-width:160px;padding:0.5em 0;z-index:1200;list-style:none;">
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Our Story</a></li>
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Leadership</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" style="position:relative;">
+                        <a href="about.html" style="font-size:1rem;letter-spacing:0.5px;text-transform:uppercase;display:flex;align-items:center;gap:0.3em;" tabindex="0">ABOUT US <span style="font-size:0.9em;">&#9662;</span></a>
+                        <ul class="dropdown" style="display:none;position:absolute;top:2.2em;right:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);border-radius:4px;min-width:160px;padding:0.5em 0;z-index:1200;list-style:none;">
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Our Story</a></li>
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Leadership</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" style="position:relative;">
+                        <a href="about.html" style="font-size:1rem;letter-spacing:0.5px;text-transform:uppercase;display:flex;align-items:center;gap:0.3em;" tabindex="0">ABOUT US <span style="font-size:0.9em;">&#9662;</span></a>
+                        <ul class="dropdown" style="display:none;position:absolute;top:2.2em;right:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);border-radius:4px;min-width:160px;padding:0.5em 0;z-index:1200;list-style:none;">
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Our Story</a></li>
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Leadership</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" style="position:relative;">
+                        <a href="about.html" style="font-size:1rem;letter-spacing:0.5px;text-transform:uppercase;display:flex;align-items:center;gap:0.3em;" tabindex="0">ABOUT US <span style="font-size:0.9em;">&#9662;</span></a>
+                        <ul class="dropdown" style="display:none;position:absolute;top:2.2em;right:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);border-radius:4px;min-width:160px;padding:0.5em 0;z-index:1200;list-style:none;">
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Our Story</a></li>
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Leadership</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" style="position:relative;">
+                        <a href="about.html" style="font-size:1rem;letter-spacing:0.5px;text-transform:uppercase;display:flex;align-items:center;gap:0.3em;" tabindex="0">ABOUT US <span style="font-size:0.9em;">&#9662;</span></a>
+                        <ul class="dropdown" style="display:none;position:absolute;top:2.2em;right:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);border-radius:4px;min-width:160px;padding:0.5em 0;z-index:1200;list-style:none;">
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Our Story</a></li>
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Leadership</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" style="position:relative;">
+                        <a href="about.html" style="font-size:1rem;letter-spacing:0.5px;text-transform:uppercase;display:flex;align-items:center;gap:0.3em;" tabindex="0">ABOUT US <span style="font-size:0.9em;">&#9662;</span></a>
+                        <ul class="dropdown" style="display:none;position:absolute;top:2.2em;right:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);border-radius:4px;min-width:160px;padding:0.5em 0;z-index:1200;list-style:none;">
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Our Story</a></li>
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Leadership</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" style="position:relative;">
+                        <a href="about.html" style="font-size:1rem;letter-spacing:0.5px;text-transform:uppercase;display:flex;align-items:center;gap:0.3em;" tabindex="0">ABOUT US <span style="font-size:0.9em;">&#9662;</span></a>
+                        <ul class="dropdown" style="display:none;position:absolute;top:2.2em;right:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);border-radius:4px;min-width:160px;padding:0.5em 0;z-index:1200;list-style:none;">
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Our Story</a></li>
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Leadership</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" style="position:relative;">
+                        <a href="about.html" style="font-size:1rem;letter-spacing:0.5px;text-transform:uppercase;display:flex;align-items:center;gap:0.3em;" tabindex="0">ABOUT US <span style="font-size:0.9em;">&#9662;</span></a>
+                        <ul class="dropdown" style="display:none;position:absolute;top:2.2em;right:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);border-radius:4px;min-width:160px;padding:0.5em 0;z-index:1200;list-style:none;">
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Our Story</a></li>
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Leadership</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" style="position:relative;">
+                        <a href="about.html" style="font-size:1rem;letter-spacing:0.5px;text-transform:uppercase;display:flex;align-items:center;gap:0.3em;" tabindex="0">ABOUT US <span style="font-size:0.9em;">&#9662;</span></a>
+                        <ul class="dropdown" style="display:none;position:absolute;top:2.2em;right:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);border-radius:4px;min-width:160px;padding:0.5em 0;z-index:1200;list-style:none;">
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Our Story</a></li>
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Leadership</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" style="position:relative;">
+                        <a href="about.html" style="font-size:1rem;letter-spacing:0.5px;text-transform:uppercase;display:flex;align-items:center;gap:0.3em;" tabindex="0">ABOUT US <span style="font-size:0.9em;">&#9662;</span></a>
+                        <ul class="dropdown" style="display:none;position:absolute;top:2.2em;right:0;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,0.08);border-radius:4px;min-width:160px;padding:0.5em 0;z-index:1200;list-style:none;">
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Our Story</a></li>
+                            <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size:0.97rem;text-decoration:none;">Leadership</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" style="position:relative;">
+</body>
+</html>
+                    <li><a href="#" style="color:#1A237E;padding:0.5em 1.2em;display:block;font-size

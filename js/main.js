@@ -1,7 +1,3 @@
-// main.js
-// Simple form handler for Contact Us page
-
-
 document.addEventListener('DOMContentLoaded', function() {
     var contactForm = document.getElementById('contactForm');
     if (contactForm) {
